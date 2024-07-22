@@ -21,6 +21,26 @@ export function ImageNavbar({ src, alt, width, height }: ImageNavbarProps) {
     )
 }
 
+interface ImageFooterProps {
+    src: string
+    alt: string
+    width: number
+    height: number
+}
+
+export function ImageFooter({ src, alt, width, height }: ImageFooterProps) {
+    return (
+        <Link as={NextLink} href="/"
+            width={"10%"}
+            borderRadius={"16px"}
+        >
+            <Stack as="picture" align={"center"}>
+                <NextImage src={src} alt={alt} width={width} height={height} />
+            </Stack>
+        </Link>
+    )
+}
+
 interface ImageProps {
     src: string
     alt: string

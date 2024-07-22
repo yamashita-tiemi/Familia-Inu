@@ -6,6 +6,7 @@ import { ImageNavbar } from "./image";
 export default function Navbar() {
     return(
         <HStack 
+            // as={"navbar"}
             bg={"#A6AE4F"}
             width={"100%"}
             height={"100px"}
