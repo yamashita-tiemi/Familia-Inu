@@ -18,13 +18,13 @@ export function TitleNavbar({ title, size }:TitleNavbarProps) {
     )
 }
 
-interface TitleSectionProps {
+interface TitlePageProps {
     title: string
     size: string
     color: string
 }
 
-export function TitleSection ({ title, size, color }:TitleSectionProps) {
+export function TitlePage ({ title, size, color }:TitlePageProps) {
     return(
         <Heading
             as="h2"
@@ -39,12 +39,12 @@ export function TitleSection ({ title, size, color }:TitleSectionProps) {
     )
 }
 
-interface TitleSectionReviewProps {
+interface TitleSectionProps {
     title: string
     size: string
 }
 
-export function TitleSectionReview ({ title, size }:TitleSectionReviewProps) {
+export function TitleSection ({ title, size }:TitleSectionProps) {
     return(
         <Heading
             as="h3"

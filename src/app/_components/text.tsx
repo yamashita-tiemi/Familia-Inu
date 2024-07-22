@@ -40,3 +40,25 @@ export function TextCard({ text, size, w }: TextCardProps) {
         </Heading>
     )
 }
+
+interface TextProps {
+    text: string
+    size: string
+    color: string
+    padding?: number
+}
+
+export function Text({ text, size, color, padding }: TextProps) {
+    return (
+        <Heading
+            as="p"
+            fontSize={size}
+            fontWeight={400}
+            color={color}
+            w={"90%"}
+            padding={padding}
+        >
+            {text}
+        </Heading>
+    )
+}

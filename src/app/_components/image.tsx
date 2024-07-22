@@ -46,3 +46,31 @@ export function Image({ src, alt, width, height, align, w, py, mx }: ImageProps)
         </Stack>
     )
 }
+
+interface ImageDailyProps {
+    src: string
+    alt: string
+    width: number
+    height: number
+    align?: string
+    w?: string
+    py?: string
+    mx?: string
+}
+
+export function ImageDaily({ src, alt, width, height, align, w, py, mx }: ImageDailyProps) {
+    return (
+        <Stack
+            as="picture"
+            w={w}
+            align={align}
+            minWidth={"80px"}
+            paddingY={py}
+            marginX={mx}
+            borderRadius={"16px"} //nao esta funcionando
+            alignItems={"center"}
+        >
+            <NextImage src={src} alt={alt} width={width} height={height} />
+        </Stack>
+    )
+}
