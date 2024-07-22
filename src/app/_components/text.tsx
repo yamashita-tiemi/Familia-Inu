@@ -19,3 +19,24 @@ export function TextIndex({ text, size, color }: TextIndexProps) {
         </Heading>
     )
 }
+
+interface TextCardProps {
+    text: string
+    size: string
+    w?: string
+}
+
+export function TextCard({ text, size, w }: TextCardProps) {
+    return (
+        <Heading
+            as="p"
+            fontSize={size}
+            fontWeight={400}
+            color={"#FFFFFF"}
+            textShadow={"4px 4px 15px rgba(0, 0, 0, 0.45)"}
+            width={"100%"}
+        >
+            {text}
+        </Heading>
+    )
+}

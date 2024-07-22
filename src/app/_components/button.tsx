@@ -1,6 +1,6 @@
 import { Box, HStack, Link } from "@chakra-ui/react"
 import NextLink from "next/link";
-import { TitleNavbar } from "./tittle";
+import { TitleButton, TitleNavbar } from "./tittle";
 
 interface ButtonProps {
     title: string
@@ -26,7 +26,7 @@ export function Button({ title, href, w }: ButtonProps) {
                 width={"100%"}
             >
                 <HStack justifyContent={"center"}>
-                    <TitleNavbar title={title} size={'24px'} />
+                    <TitleButton title={title} size={"24px"}/>
                 </HStack>
             </Box>
         </Link>

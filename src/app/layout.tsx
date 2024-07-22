@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
-      <body className={fonts.inter.variable}>
+      <body className={fonts.inter.variable} style={{ backgroundColor: "#FBF2EC" }}>
         <Providers>{children}</Providers>
       </body>
     </html>
