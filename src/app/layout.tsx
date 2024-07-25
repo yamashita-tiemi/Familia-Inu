@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
-      <body className={fonts.inter.variable} style={{ backgroundColor: "#FBF2EC" }}>
+      <body className={fonts.baloo.variable} style={{ backgroundColor: "#FBF2EC" }}>
         <Providers>{children}</Providers>
       </body>
     </html>

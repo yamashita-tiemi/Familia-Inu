@@ -9,9 +9,11 @@ export default function Navbar() {
             // as={"navbar"}
             bg={"#A6AE4F"}
             width={"100%"}
-            height={"100px"}
+            height={"70px"}
             justifyContent={"space-between"}
             paddingX={10}
+            position={"fixed"}
+            
         >
             <ImageNavbar src={"/logo.png"} alt={"Família Inu"} width={165} height={95}/>
             <Flex

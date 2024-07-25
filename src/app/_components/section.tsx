@@ -16,6 +16,7 @@ export function SectionIndexPrimary() {
             paddingBottom={10}
             justifyContent={"center"}
             alignItems={"center"}
+            paddingTop={"70px"}
         >
             <TitlePage title={"Família Inu"} size={"42px"} color={"#FFFFFF"}/>
             <HStack

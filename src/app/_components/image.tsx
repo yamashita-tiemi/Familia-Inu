@@ -12,7 +12,7 @@ interface ImageNavbarProps {
 export function ImageNavbar({ src, alt, width, height }: ImageNavbarProps) {
     return (
         <Link as={NextLink} href="/"
-            width={"10%"}
+            width={"7%"}
         >
             <Stack as="picture" align={"center"}>
                 <NextImage src={src} alt={alt} width={width} height={height} />

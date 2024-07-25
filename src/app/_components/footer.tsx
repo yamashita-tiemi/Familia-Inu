@@ -10,7 +10,7 @@ export default function Footer() {
             as={"footer"}
             bg={"#A6AE4F"}
             width={"100%"}
-            height={"200px"}
+            height={"150px"}
             justifyContent={"space-between"}
             paddingX={10}
         >
