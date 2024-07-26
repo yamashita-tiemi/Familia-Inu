@@ -1,9 +1,10 @@
 import { HStack, Stack } from "@chakra-ui/react";
 import { ArticleDaily, ArticleIndexPrimary } from "./article";
-import { TitlePage, TitleSection } from "./tittle";
+import { TitleCard, TitlePage, TitleSection } from "./tittle";
 import { Image } from "./image";
 import { CardReview } from "./card";
-import { IconCard } from "./icon";
+import { IconCard, IconSocialCard } from "./icon";
+import { Text, TextCard } from "./text";
 
 export function SectionIndexPrimary() {
     return (
@@ -81,6 +82,57 @@ export function SectionIndexDaily() { //precisa fazer o carossel
             <ArticleDaily src={"/daily_photos/sayuri.png"} alt={"Sayuri"} widthImg={1005} heightImg={372} 
                 text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque."}
             />
+        </Stack>
+    )
+}
+
+export function SectionAbout() {
+    return (
+        <Stack
+            as="section"
+            // bg={"pink"}
+            width={"100%"}
+            height={"720px"}
+            paddingX={20}
+            paddingBottom={10}
+            justifyContent={"center"}
+            alignItems={"center"}
+            paddingTop={"70px"}
+        >
+            <TitlePage title={"Sobre"} size={"42px"} color={"#CB4817"}/>
+            <HStack
+                // bg={"blue"}
+                width={"90%"}
+                height={"450px"}
+                paddingTop={12}
+                justifyContent={"space-between"}
+            >
+                <Stack
+                    bg={"#F2933C"}
+                    width={"45%"}
+                    height={"100%"}
+                    borderRadius={"16px"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    paddingX={8}
+                >
+                    <TitleCard title={"Vitória Alexandre"} size={"32px"}/>
+                    <Text text={"orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore "} size={"24px"} color={"#FFFFFF"} w={"100%"}/>
+                </Stack>
+                <Stack
+                    bg={"#F2933C"}
+                    width={"45%"}
+                    height={"100%"}
+                    borderRadius={"16px"}
+                    justifyContent={"space-evenly"}
+                    alignItems={"center"}
+                    paddingX={8}
+                >
+                    <TitleCard title={"Venha conhecer nosso trabalho!"} size={"28px"}/>
+                    <TitleCard title={"Entre em contato conosco"} size={"32px"}/>
+                    <IconSocialCard/>
+                </Stack>
+            </HStack>
         </Stack>
     )
 }

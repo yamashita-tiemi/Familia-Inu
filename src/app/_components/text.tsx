@@ -45,18 +45,21 @@ interface TextProps {
     text: string
     size: string
     color: string
-    padding?: number
+    paddingX?: number
+    paddingY?: number
+    w: string
 }
 
-export function Text({ text, size, color, padding }: TextProps) {
+export function Text({ text, size, color, paddingX, paddingY, w }: TextProps) {
     return (
         <Heading
             as="p"
             fontSize={size}
             fontWeight={400}
             color={color}
-            w={"90%"}
-            padding={padding}
+            w={w}
+            paddingX={paddingX}
+            paddingY={paddingY}
         >
             {text}
         </Heading>
