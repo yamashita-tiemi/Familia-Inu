@@ -93,3 +93,20 @@ export function TitleCard({ title, size }:TitleCardProps) {
         </Heading>
     )
 }
+
+interface TitleAccordionProps {
+    title: string
+}
+
+export function TitleAccordion({ title }:TitleAccordionProps) {
+    return(
+        <Heading
+            as="h5"
+            fontSize={"20px"}
+            fontWeight={500}
+            color={"#FFFFFF"}
+        >
+            {title}
+        </Heading>
+    )
+}
