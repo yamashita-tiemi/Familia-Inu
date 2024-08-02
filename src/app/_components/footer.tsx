@@ -14,12 +14,11 @@ export default function Footer() {
             justifyContent={"space-between"}
             paddingX={10}
         >
-            <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={120} height={120}/>
+            <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100}/>
             <Stack width={"50%"}>
-                <TitleCard title={"Missão"} size={"28px"}/>
-                <Text size={"24px"} color={"#FFFFFF"}
-                    text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque. "}
-                />
+                <TitleCard title={"Missão"} size={"18px"}/>
+                <Text size={"20px"} color={"#FFFFFF"}
+                text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque. "} w={""}                />
             </Stack>
             <IconSocial></IconSocial>
         </HStack>

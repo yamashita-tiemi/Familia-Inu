@@ -6,10 +6,10 @@ import RegistrationArea from '../_components/RegistrationArea';
 
 export default function Page() {
   return (
-    //<Navbar />
     <>
-    <RegistrationArea />
+        <Navbar />
+        <RegistrationArea />
+        <Footer/>
     </>
-    //<Footer/>
   );
 }

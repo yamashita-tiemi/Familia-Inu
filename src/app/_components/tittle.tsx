@@ -11,7 +11,7 @@ export function TitleNavbar({ title, size }:TitleNavbarProps) {
             as="h3"
             fontSize={size}
             fontWeight={800}
-            color={"#FFFFFF"}
+            color={"#CB4817"}
         >
             {title}
         </Heading>
