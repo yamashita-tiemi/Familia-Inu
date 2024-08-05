@@ -19,8 +19,8 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = useColorModeValue('gray.800', 'white');
   const primaryColor = useColorModeValue('orange.500', 'orange.300');
-  const intervalColor = useColorModeValue('yellow.300', 'yellow.600'); // Cor amarela para o intervalo
   const hoverColor = useColorModeValue('orange.100', 'orange.800');
+  const selectColor = useColorModeValue('orange.400', 'orange.900'); // Cor laranja fixa para o intervalo
 
   const theme = extendTheme({
     styles: {
@@ -29,6 +29,28 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange
           _hover: {
             backgroundColor: hoverColor,
           },
+        },
+        '.selected-start': {
+          backgroundColor: primaryColor,
+          color: 'white',
+          borderTopLeftRadius: '50%',
+          borderBottomLeftRadius: '50%',
+        },
+        '.selected-end': {
+          backgroundColor: primaryColor,
+          color: 'white',
+          borderTopRightRadius: '50%',
+          borderBottomRightRadius: '50%',
+        },
+        '.selected-interval': {
+          backgroundColor: selectColor,
+        },
+        '.today': {
+          backgroundColor: 'rgba(203, 72, 23, 0.2)',
+        },
+        '.past-date': {
+          backgroundColor: 'gray.200',
+          pointerEvents: 'none',
         },
       },
     },
@@ -40,6 +62,11 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange
 
   const handleSelectSlot = ({ start }: { start: Date }) => {
     const selectedDate = moment(start).startOf('day').toDate();
+    const today = moment().startOf('day');
+
+    if (moment(selectedDate).isBefore(today)) {
+      return; // Ignore dates before today
+    }
 
     if (!selectedRange.start || (selectedRange.start && selectedRange.end)) {
       setSelectedRange({ start: selectedDate, end: null });
@@ -60,62 +87,36 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange
       },
     };
 
+    const classNames = [];
+
+    const today = moment().startOf('day');
+
+    if (moment(date).isBefore(today)) {
+      classNames.push('past-date');
+    }
+
     if (selectedRange.start && selectedRange.end) {
       if (moment(date).isSame(selectedRange.start, 'day')) {
-        return { 
-          ...baseStyle,
-          style: {
-            ...baseStyle.style,
-            backgroundColor: primaryColor,
-            color: 'white',
-            borderTopLeftRadius: '50%',
-            borderBottomLeftRadius: '50%',
-          }
-        };
+        classNames.push('selected-start');
       }
       if (moment(date).isSame(selectedRange.end, 'day')) {
-        return { 
-          ...baseStyle,
-          style: {
-            ...baseStyle.style,
-            backgroundColor: primaryColor,
-            color: 'white',
-            borderTopRightRadius: '50%',
-            borderBottomRightRadius: '50%',
-          }
-        };
+        classNames.push('selected-end');
       }
-      if (moment(date).isBetween(selectedRange.start, selectedRange.end, null, '()')) {
-        return { 
-          ...baseStyle,
-          style: {
-            ...baseStyle.style,
-            backgroundColor: intervalColor,
-          }
-        };
+      if (moment(date).isBetween(selectedRange.start, selectedRange.end, null, '[]')) {
+        classNames.push('selected-interval');
       }
     } else if (selectedRange.start && moment(date).isSame(selectedRange.start, 'day')) {
-      return { 
-        ...baseStyle,
-        style: {
-          ...baseStyle.style,
-          backgroundColor: primaryColor,
-          color: 'white',
-          borderRadius: '50%',
-        }
-      };
+      classNames.push('selected-start');
     }
     
-    if (moment(date).isSame(moment(), 'day')) {
-      return { 
-        ...baseStyle,
-        style: {
-          ...baseStyle.style,
-          backgroundColor: 'rgba(203, 72, 23, 0.2)',
-        }
-      };
+    if (moment(date).isSame(today, 'day')) {
+      classNames.push('today');
     }
-    return baseStyle;
+
+    return {
+      ...baseStyle,
+      className: classNames.join(' ')
+    };
   };
 
   return (
