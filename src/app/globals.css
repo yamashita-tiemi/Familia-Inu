@@ -1,19 +1,16 @@
 :root {
-    /*MEU ESTILO*/
-    --green-dark: #6C722B;
-    --green-light: #A6AE4F;
-    --red: #CB4817;
-    --orange: #F2933C;
-    --yellow: #F2C94C;
 
-    /* Adicionando cores de texto e fundo para um design completo */
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --background-primary: #FFFFFF;
-    --background-secondary: #F5F5F5;
-
-
-
+        --bg-primary: #A6AE4F;
+        --bg-secondary: #F9F3EC;
+        --bg-tertiary: #F2933C;
+        --color-primary: #CB4817;
+        --color-secondary: rgba(203, 72, 23, 0.8);
+        --color-tertiary: rgba(203, 72, 23, 0.3);
+        --color-quaternary: rgba(203, 72, 23, 0.2);
+        --text-black: black;
+        --text-white: white;
+        --input-bg: #FBF2EC;
+      
 
 
   --max-width: 1100px;
@@ -122,3 +119,75 @@ a {
     color-scheme: dark;
   }
 }
+
+
+
+
+  /* Estilos para o calendário */
+  .react-big-calendar {
+    width: 100%;
+    height: calc(100vh - 70px); /* Garante que ocupe toda a altura menos a navbar */
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    background-color: var(--background-primary);
+  }
+  
+  .rbc-toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: var(--green-light);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .rbc-toolbar button {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .rbc-toolbar button:hover {
+    background-color: var(--red);
+  }
+  
+  .rbc-event {
+    background-color: var(--red) !important;
+    color: white !important;
+  }
+  
+  .rbc-selected {
+    background-color: var(--yellow) !important;
+  }
+  
+  .rbc-day-bg {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--background-secondary);
+  }
+  
+  .rbc-date-cell {
+    color: var(--green-dark);
+  }
+  
+  .rbc-date-cell:hover {
+    background-color: var(--green-light);
+  }
+  
+  .rbc-month-view {
+    background-color: var(--background-primary);
+  }
+  
+  .rbc-header {
+    background-color: var(--green-dark);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  
