@@ -26,4 +26,3 @@ export function LoginPage() {
 }
 
 export default LoginPage;
-n
