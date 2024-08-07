@@ -14,6 +14,7 @@ export function Button({ title, href, w }: ButtonProps) {
             as={NextLink}
             href={href}
             backgroundColor={"#CB4817"}
+            _hover={{ bg: "#F2933C" }} 
             borderRadius={"10px"}
             color={"#FFFFFF"}
             width={w}

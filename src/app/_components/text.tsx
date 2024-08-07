@@ -1,9 +1,9 @@
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@chakra-ui/react";
 
 interface TextIndexProps {
-    text: string
-    size: string
-    color: string
+    text: string;
+    size: string;
+    color: string;
 }
 
 export function TextIndex({ text, size, color }: TextIndexProps) {
@@ -13,13 +13,14 @@ export function TextIndex({ text, size, color }: TextIndexProps) {
             fontSize={size}
             fontWeight={400}
             color={color}
-            w={"90%"}
-            marginBottom={4}
+            w="90%"
+            mb={4}
         >
             {text}
         </Heading>
-    )
+    );
 }
+
 export function TextIndexBold({ text, size, color }: TextIndexProps) {
     return (
         <Heading
@@ -27,56 +28,59 @@ export function TextIndexBold({ text, size, color }: TextIndexProps) {
             fontSize={size}
             fontWeight={600}
             color={color}
-            w={"90%"}
-            paddingBottom={10}
+            w="90%"
+            pb={10}
         >
             {text}
         </Heading>
-    )
+    );
 }
 
 interface TextCardProps {
-    text: string
-    size: string
-    w?: string
+    text: string;
+    size: string;
+    w?: string;
 }
 
-export function TextCard({ text, size, w }: TextCardProps) {
+export function TextCard({ text, size, w = "100%" }: TextCardProps) {
     return (
         <Heading
             as="p"
             fontSize={size}
             fontWeight={400}
-            color={"#FFFFFF"}
-            textShadow={"4px 4px 15px rgba(0, 0, 0, 0.45)"}
-            width={"100%"}
+            color="#FFFFFF"
+            textShadow="4px 4px 15px rgba(0, 0, 0, 0.45)"
+            w={w}
         >
             {text}
         </Heading>
-    )
+    );
 }
 
 interface TextProps {
-    text: string
-    size: string
-    color: string
-    paddingX?: number
-    paddingY?: number
-    w: string
+    text: string;
+    size: string;
+    color: string;
+    paddingX?: number;
+    paddingY?: number;
+    w?: string;
+    weight: number;
+    align: "left" | "center" | "right" | "justify";
 }
 
-export function Text({ text, size, color, paddingX, paddingY, w }: TextProps) {
+export function Text({ text, size, color, paddingX = 0, paddingY = 0, w = "100%", weight, align }: TextProps) {
     return (
         <Heading
             as="p"
             fontSize={size}
-            fontWeight={400}
+            fontWeight={weight}
             color={color}
             w={w}
-            paddingX={paddingX}
-            paddingY={paddingY}
+            px={paddingX}
+            py={paddingY}
+            textAlign={align}
         >
             {text}
         </Heading>
-    )
+    );
 }

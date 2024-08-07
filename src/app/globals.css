@@ -207,10 +207,10 @@ a {
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #F2933C;
-    border-radius: 4px;
+    background: var(--green-dark);
+    border-radius: 1px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #CB4817;
+    background: var(--green-dark);
   }

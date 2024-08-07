@@ -5,6 +5,7 @@ import { Stack, Box, Flex } from '@chakra-ui/react';
 import Navbar from '../_components/navbar';
 import AppointmentForm from '../_components/AppointmentForm';
 import CalendarComponent from '../_components/CalendarComponent';
+import Footer from '../_components/footer';
 
 const AgendaPage = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
@@ -56,6 +57,7 @@ const AgendaPage = () => {
           </Box>
         </Flex>
       </Stack>
+      <Footer/>
     </>
   );
 };

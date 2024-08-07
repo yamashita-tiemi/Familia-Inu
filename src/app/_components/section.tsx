@@ -63,6 +63,9 @@ export function SectionIndexReview() {
                 <CardReview icon1={<IconCard/>} icon2={<IconCard/>} icon3={<IconCard/>} icon4={<IconCard opacity={0.5}/>} icon5={<IconCard opacity={0.5}/>}
                     title={"Márcia Silva"} text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque."} 
                 />
+                <CardReview icon1={<IconCard/>} icon2={<IconCard/>} icon3={<IconCard/>} icon4={<IconCard opacity={0.5}/>} icon5={<IconCard opacity={0.5}/>}
+                    title={"Márcia Silva"} text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque."} 
+                />
             </HStack>
             
         </Stack>
@@ -81,8 +84,8 @@ export function SectionIndexDaily() { //precisa fazer o carossel
             alignItems={"center"}
         >
             <TitleSection title={"Um pouco dos nossos dias"} size={"42px"}/>
-            <ArticleDaily src={"/daily_photos/sayuri.png"} alt={"Sayuri"} widthImg={1005} heightImg={372} 
-                text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque."}
+            <ArticleDaily src={"/daily_photos/sayuri.png"} alt={"Sayuri"} widthImg={1100} heightImg={372} 
+                text={"Vivencie a rotina especial do nosso hotel pet, onde cada dia é repleto de carinho, diversão e cuidado. Transformamos momentos simples em experiências inesquecíveis para nossos hóspedes de quatro patas. Venha nos visitar e descubra como tratamos cada pet com amor e dedicação, garantindo conforto e alegria em cada estadia."}
             />
         </Stack>
     )
