@@ -1,75 +1,85 @@
-// src/app/_components/PetForm.tsx
-
 'use client';
 
-import { Box, Stack, Input, FormControl, FormLabel, HStack, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Box, Stack, Input, FormControl, FormLabel, HStack, Heading, Button } from '@chakra-ui/react';
 
-export const PetForm = () => {
-  const [pet, setPet] = useState({
-    nome: '',
-    raca: '',
-    porte: '',
-    cor: '',
-    observacao: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setPet({ ...pet, [name]: value });
+interface PetFormProps {
+  pet: {
+    nome: string;
+    raca: string;
+    porte: string;
+    cor: string;
+    observacao: string;
   };
+  onPetChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+}
 
+export const PetForm = ({ pet, onPetChange }: PetFormProps) => {
   return (
-    <Box bg="#F2933C" padding={8} borderRadius="md" width="100%">
-      <Text fontSize="3xl" mb={4} textAlign="left" color="#CB4817">Pet</Text>
+    <Box bg="#6C722B" p={6} borderRadius="md" maxWidth="600px" mx="auto" boxShadow="lg">
+      <Heading fontWeight="normal" fontSize="2xl" mb={4} textAlign="left" color="#FBF2EC" >Pet</Heading>
       <Stack spacing={4}>
         <HStack spacing={4}>
           <FormControl>
-            <FormLabel color="black">Nome do Pet:</FormLabel>
-            <Input 
+            <FormLabel color="#FFFFFF">Nome do Pet:</FormLabel>
+            <Input
               name="nome"
               value={pet.nome}
-              onChange={handleChange}
+              onChange={onPetChange}
               bg="#FBF2EC"
+              borderColor="#A6AE4F"
+              _placeholder={{ color: '#A6AE4F' }}
+              _focus={{ borderColor: "#CB4817" }}
             />
           </FormControl>
           <FormControl>
-            <FormLabel color="black">Porte:</FormLabel>
-            <Input 
+            <FormLabel color="#FFFFFF">Porte:</FormLabel>
+            <Input
               name="porte"
               value={pet.porte}
-              onChange={handleChange}
+              onChange={onPetChange}
               bg="#FBF2EC"
+              borderColor="#A6AE4F"
+              _placeholder={{ color: '#A6AE4F' }}
+              _focus={{ borderColor: "#CB4817" }}
             />
           </FormControl>
         </HStack>
         <HStack spacing={4}>
           <FormControl>
-            <FormLabel color="black">Raça:</FormLabel>
-            <Input 
+            <FormLabel color="#FFFFFF">Raça:</FormLabel>
+            <Input
               name="raca"
               value={pet.raca}
-              onChange={handleChange}
+              onChange={onPetChange}
               bg="#FBF2EC"
+              borderColor="#A6AE4F"
+              _placeholder={{ color: '#A6AE4F' }}
+              _focus={{ borderColor: "#CB4817" }}
             />
           </FormControl>
           <FormControl>
-            <FormLabel color="black">Cor:</FormLabel>
-            <Input 
+            <FormLabel color="#FFFFFF">Cor:</FormLabel>
+            <Input
               name="cor"
               value={pet.cor}
-              onChange={handleChange}
+              onChange={onPetChange}
               bg="#FBF2EC"
+              borderColor="#A6AE4F"
+              _placeholder={{ color: '#A6AE4F' }}
+              _focus={{ borderColor: "#CB4817" }}
             />
           </FormControl>
         </HStack>
         <FormControl>
-          <FormLabel color="black">Observações:</FormLabel>
-          <Input 
+          <FormLabel color="#FFFFFF">Observações:</FormLabel>
+          <Input
             name="observacao"
             value={pet.observacao}
-            onChange={handleChange}
+            onChange={onPetChange}
             bg="#FBF2EC"
+            borderColor="#A6AE4F"
+            _placeholder={{ color: '#A6AE4F' }}
+            _focus={{ borderColor: "#CB4817" }}
             height="100px"
             as="textarea"
           />

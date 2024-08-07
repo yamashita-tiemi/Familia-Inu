@@ -11,9 +11,24 @@ export function TextIndex({ text, size, color }: TextIndexProps) {
         <Heading
             as="p"
             fontSize={size}
+            fontWeight={400}
+            color={color}
+            w={"90%"}
+            marginBottom={4}
+        >
+            {text}
+        </Heading>
+    )
+}
+export function TextIndexBold({ text, size, color }: TextIndexProps) {
+    return (
+        <Heading
+            as="p"
+            fontSize={size}
             fontWeight={600}
             color={color}
             w={"90%"}
+            paddingBottom={10}
         >
             {text}
         </Heading>

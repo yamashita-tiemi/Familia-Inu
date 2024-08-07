@@ -1,31 +1,33 @@
 import { Stack } from "@chakra-ui/react"
-import { Text, TextIndex } from "./text"
+import { Text, TextIndex, TextIndexBold } from "./text"
 import { Button } from "./button"
 import { ImageDaily } from "./image"
 
 interface ArticleIndexPrimaryProps {
     text1: string
     text2: string
+    text3: string
 }
 
-export function ArticleIndexPrimary({ text1, text2 }: ArticleIndexPrimaryProps) {
+export function ArticleIndexPrimary({ text1, text2, text3 }: ArticleIndexPrimaryProps) {
     return (
         <Stack
-            // bg={"pink"}
             height={"100%"}
             justifyContent={"space-between"}
         >
             <Stack
-                // bg={"blue"}
                 as="article"
                 justifyContent={"space-between"}
                 alignItems={"flex-start"}
                 height={"55%"}
+                width={"80%"}
+
             >
-                <TextIndex text={text1} size={"28px"} color={"#FFFFFF"} />
-                <TextIndex text={text2} size={"28px"} color={"#FFFFFF"} />
+                <TextIndexBold text={text1} size={"35px"} color={"#FFFFFF"} />
+                <TextIndex text={text2} size={"20px"} color={"#FFFFFF"} />
+                <TextIndex text={text3} size={"20px"} color={"#FFFFFF"} />
             </Stack>
-            <Button title={"Agende aqui"} href={"/agenda"} w="50%"></Button>
+            <Button title={"Agende aqui"} href={"/agenda"} w="30%"></Button>
         </Stack>
     )
 }

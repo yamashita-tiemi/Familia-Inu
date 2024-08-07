@@ -1,15 +1,42 @@
-// src/app/_components/RegistrationArea.tsx
-
 'use client';
 
-import { Stack, Button, Heading, Box } from '@chakra-ui/react';
+import { Stack, Button, Box } from '@chakra-ui/react';
+import { useState } from 'react';
 import { TutorForm } from './TutorForm';
 import { PetForm } from './PetForm';
 
 const RegistrationArea = () => {
+  const [tutor, setTutor] = useState({
+    nome: '',
+    endereco: '',
+    telefone: '',
+    email: '',
+    senha: '',
+  });
+
+  const [pet, setPet] = useState({
+    nome: '',
+    raca: '',
+    porte: '',
+    cor: '',
+    observacao: '',
+  });
+
+  const handleTutorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setTutor({ ...tutor, [name]: value });
+  };
+
+  const handlePetChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setPet({ ...pet, [name]: value });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted');
+    // Aqui você pode fazer a submissão dos dados dos formulários
+    console.log('Tutor Data:', tutor);
+    console.log('Pet Data:', pet);
   };
 
   return (
@@ -19,8 +46,9 @@ const RegistrationArea = () => {
       align="center" 
       maxWidth="100%" 
       margin="0 auto" 
-      bg="#A6AE4F" 
-      minHeight="100vh" >
+      bg="#d7dca1"
+      minHeight="100vh"
+    >
       <Box 
         width="100%" 
         color="white" 
@@ -33,18 +61,19 @@ const RegistrationArea = () => {
       <Stack 
         spacing={8} 
         width="80%" 
-        bg="#A6AE4F" 
+        bg="#d7dca1" 
         paddingTop={20}
       >
         <Stack direction={["column", "row"]} spacing={4}>
-          <TutorForm />
-          <PetForm />
+          <TutorForm tutor={tutor} onTutorChange={handleTutorChange} />
+          <PetForm pet={pet} onPetChange={handlePetChange} />
         </Stack>
         <Button 
+          margin="0 auto"
           bg="#CB4817" 
           color="white" 
           width="20em" 
-          _hover={{ bg: "#F2933C" }} // Optional: change color on hover
+          _hover={{ bg: "#F2933C" }} 
           onClick={handleSubmit}
         >
           Registrar

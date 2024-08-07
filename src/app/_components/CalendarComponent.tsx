@@ -4,7 +4,7 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Box, useColorModeValue, Text, ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { Box, useColorModeValue, Text, ChakraProvider, extendTheme, HStack } from '@chakra-ui/react';
 
 moment.locale('pt-br');
 const localizer = momentLocalizer(moment);
@@ -148,11 +148,13 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange
         />
       </Box>
       <Box mt={4}>
-        <Text>Data de Check-in: {selectedRange.start ? moment(selectedRange.start).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
-        <Text>Data de Check-out: {selectedRange.end ? moment(selectedRange.end).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
-        <Text mt={2} fontSize="sm" color="gray.600">
+        <Text mt={2} fontSize={12.8} >
           A hospedagem conta como entrada às 12:00 (meio-dia) da data de check-in e saída às 12:00 (meio-dia) da data de check-out.
         </Text>
+        <HStack spacing={4} fontSize={10} color="gray.600">
+          <Text >Check-in: {selectedRange.start ? moment(selectedRange.start).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
+          <Text >Check-out: {selectedRange.end ? moment(selectedRange.end).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
+        </HStack>
       </Box>
     </ChakraProvider>
   );

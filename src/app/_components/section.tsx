@@ -9,8 +9,9 @@ import { Text, TextCard } from "./text";
 export function SectionIndexPrimary() {
     return (
         <Stack
+            
             as="section"
-            bg={"#A6AE4F"}
+            bg={"#6C722B"}
             width={"100%"}
             height={"720px"}
             paddingX={20}
@@ -19,16 +20,17 @@ export function SectionIndexPrimary() {
             alignItems={"center"}
             paddingTop={"70px"}
         >
-            <TitlePage title={"Família Inu"} size={"42px"} color={"#FFFFFF"}/>
             <HStack
                 // bg={"black"}
                 width={"100%"}
                 paddingTop={12}
                 justifyContent={"space-between"}
+
             >
                 <ArticleIndexPrimary
-                    text1={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
-                    text2={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque."}
+                    text1={"Bem-vindo à Família Inu!"}
+                    text2={"Na Família Inu, oferecemos um lar seguro e acolhedor para o seu pet. Nossa equipe dedicada garante atendimento personalizado, com todo o amor e cuidado. Com profissionais experientes e instalações modernas, seu pet se sentirá em casa, desfrutando de atividades em um ambiente seguro."}
+                    text3={"Confie em nós para cuidar do seu pet com carinho e atenção. Nossos espaços confortáveis garantem uma estadia tranquila. Agende agora e garanta o melhor para o seu pet!"}
                 ></ArticleIndexPrimary>
                 <Image src={"/imgIndex.png"} alt={"Vitória e Sayuri"} width={450} height={457} w="100%" align="flex-end"/>
             </HStack>
@@ -48,7 +50,7 @@ export function SectionIndexReview() {
         >
             <TitleSection title={"Avaliações"} size={"42px"}/>
             <HStack
-                width={"100%"}
+                width={"90%"}
                 paddingTop={12}
                 justifyContent={"space-between"}
             >

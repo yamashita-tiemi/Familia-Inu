@@ -196,3 +196,21 @@ a {
   }
 
   
+
+/* Estilo global para a barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #FBF2EC;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #F2933C;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #CB4817;
+  }

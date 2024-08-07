@@ -23,13 +23,13 @@ export function CardReview({ title, text, icon1, icon2, icon3, icon4, icon5, w }
             borderRadius={"16px"}
             align={"center"}
             justifyContent={"space-evenly"}
-            width={"30%"}
+            width={"25%"}
             padding={8}
         >
             <Stack
                 width={"80%"}
                 height={"25%"}
-                justifyContent={"space-between"}
+                justifyContent={"space-around"}
             >
                 <TitleCard title={title} size={"28px"} />
                 <HStack
@@ -43,7 +43,7 @@ export function CardReview({ title, text, icon1, icon2, icon3, icon4, icon5, w }
                     {icon5}
                 </HStack>
             </Stack>
-            <TextCard text={text} size={"24px"} />
+            <TextCard text={text} size={"18px"} />
         </Stack>
     )
 }

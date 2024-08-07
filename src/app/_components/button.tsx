@@ -14,11 +14,12 @@ export function Button({ title, href, w }: ButtonProps) {
             as={NextLink}
             href={href}
             backgroundColor={"#CB4817"}
-            borderRadius={"16px"}
+            borderRadius={"10px"}
             color={"#FFFFFF"}
             width={w}
             paddingY={3}
             marginBottom={2}
+            marginTop={10}
             minWidth={"100px"}
         >
             <Box
@@ -26,7 +27,7 @@ export function Button({ title, href, w }: ButtonProps) {
                 width={"100%"}
             >
                 <HStack justifyContent={"center"}>
-                    <TitleButton title={title} size={"24px"}/>
+                    <TitleButton title={title} size={"20px"}/>
                 </HStack>
             </Box>
         </Link>
