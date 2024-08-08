@@ -1,4 +1,4 @@
-import { HStack, Link, Stack } from "@chakra-ui/react";
+import { Center, HStack, Link, Stack } from "@chakra-ui/react";
 import { FaSquareWhatsapp, FaSquareInstagram, FaTiktok, FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { IoPawSharp } from "react-icons/io5";
 import NextLink from "next/link";
@@ -21,15 +21,15 @@ export function IconSocial() {
     return (
         <Stack width={"20%"}>
             <Link as={NextLink} href={'https://web.whatsapp.com/'} isExternal={true}>
-                <HStack>
-                    <FaSquareWhatsapp size={"40px"} color="#FFFFFF" />
-                    <TextIndex text={"(32) 9 XXXX-XXXX"} size={"18px"} color={"#FFFFFF"} />
+                <HStack margin="0 auto">
+                    <FaSquareWhatsapp size={"30px"} color="#FFFFFF" />
+                    <TextIndex margin="0 auto" text={"(32) 9 XXXX-XXXX"} size={"16px"}  color={"#FFFFFF"} />
                 </HStack>
             </Link>
             <Link as={NextLink} href={'https://www.instagram.com/'} isExternal={true}>
                 <HStack>
-                    <FaSquareInstagram size={"40px"} color="#FFFFFF" />
-                    <TextIndex text={"@familia_inu"} size={"18px"} color={"#FFFFFF"} />
+                    <FaSquareInstagram size={"30px"} color="#FFFFFF" />
+                    <TextIndex margin="0 auto" text={"@familia_inu"} size={"16px"} color={"#FFFFFF"} />
                 </HStack>
             </Link>
         </Stack>

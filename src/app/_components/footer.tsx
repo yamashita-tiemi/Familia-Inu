@@ -10,15 +10,17 @@ export default function Footer() {
             as={"footer"}
             bg={"#A6AE4F"}
             width={"100%"}
-            height={"150px"}
-            justifyContent={"space-between"}
+            height={"100px"}
+            justifyContent={"space-around"}
             paddingX={10}
         >
-            <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100}/>
-            <Stack width={"50%"}>
-                <TitleCard title={"Missão"} size={"18px"}/>
-                <Text size={"20px"} color={"#FFFFFF"}
-                text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque. "} w={""}                />
+            <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={80} height={100}/>
+            <Stack width={"50%"} justifyContent="space-around" >
+                <TitleCard title={"Missão"} size={"12px"}/>
+                <Text size={"20px"} color={"#FFFF"}
+                align="justify" text={"Cuidando do seu pet com amor e dedicação!"} weight={400} />
+                <Text  align="justify" size={"16px"} color={"#FFFF"}
+                text={"© 2024 Familia Inu, todos os direitos reservados"} weight={300} />
             </Stack>
             <IconSocial></IconSocial>
         </HStack>

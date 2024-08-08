@@ -4,9 +4,10 @@ interface TextIndexProps {
     text: string;
     size: string;
     color: string;
+    margin: string;
 }
 
-export function TextIndex({ text, size, color }: TextIndexProps) {
+export function TextIndex({ text, size, color, margin }: TextIndexProps) {
     return (
         <Heading
             as="p"
@@ -15,6 +16,7 @@ export function TextIndex({ text, size, color }: TextIndexProps) {
             color={color}
             w="90%"
             mb={4}
+            margin={margin}
         >
             {text}
         </Heading>
