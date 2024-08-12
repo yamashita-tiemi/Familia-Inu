@@ -37,7 +37,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, t
   return (
     <Box
       as="form"
-      bg="#FFF"
+      bg="white"
       padding={8}
       borderRadius="md"
       boxShadow="md"
@@ -74,9 +74,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, t
 
         <Button
           type="submit"
-          bg="#CB4817"
+          bg="var(--orange1)"
           color="white"
-          _hover={{ bg: "#F2933C" }}
+          _hover={{ bg: "var(--orange2)" }}
         >
           Agendar
         </Button>

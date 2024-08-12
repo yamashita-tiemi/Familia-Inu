@@ -20,17 +20,17 @@ export default function Navbar() {
                 gap={"10"}
             >
                 <Link as={NextLink} href='/' color="#A6AE4F">
-                    <TitleNavbar title={"Home"} size={"28px"} />
+                    <TitleNavbar color="#F2933C" title={"Home"} size={"28px"} />
                 </Link>
                 <Link as={NextLink} href='/agenda' color="#A6AE4F">
-                    <TitleNavbar title={"Agenda"} size={"28px"} />
+                    <TitleNavbar color="#F2933C" title={"Agenda"} size={"28px"} />
                 </Link>
                 <Link as={NextLink} href='/sobre' color="#A6AE4F">
-                    <TitleNavbar title={"Sobre"} size={"28px"} />
+                    <TitleNavbar color="#F2933C" title={"Sobre"} size={"28px"} />
                 </Link>
             </Flex>
             <Link as={NextLink} href='/login' color="#A6AE4F">
-                <TitleNavbar title={"Login"} size={"28px"} />
+                <TitleNavbar color="#CB4817" title={"Login"} size={"28px"} />
             </Link>
         </HStack>
     )

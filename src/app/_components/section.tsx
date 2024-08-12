@@ -167,7 +167,7 @@ export function SectionFAQ() {
             justifyContent="center"
             alignItems="center"
         >
-            <TitleSection title={"Dúvidas Frequentes"} size={"42px"} />
+            <TitlePage title={"Dúvidas Frequentes"} size={"42px"} color={"#CB4817"}/>
             <Stack spacing={4} width="100%" maxWidth="800px" marginTop={8}>
                 {faqData.map((item, index) => (
                     <FAQItem key={index} question={item.question} answer={item.answer} />

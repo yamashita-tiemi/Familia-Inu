@@ -1,10 +1,11 @@
 :root {
     /*MEU ESTILO*/
-    --green-dark: #6C722B;
-    --green-light: #A6AE4F;
-    --red: #CB4817;
-    --orange: #F2933C;
-    --yellow: #F2C94C;
+    --green1: #6C722B;
+    --green2: #A6AE4F;
+    --orange1: #CB4817;
+    --orange2: #F2933C;
+    --yellow1: #F2C94C;
+    --white1: #ffff
 
     /* Adicionando cores de texto e fundo para um design completo */
     --text-primary: #333333;

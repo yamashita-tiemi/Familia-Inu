@@ -56,7 +56,7 @@ export function ArticleDaily({ src, alt, widthImg, heightImg, text }:ArticleDail
                 top={"-10px"}
                 borderRadius={"0 0 16px 16px"}
             >
-                <Text weight={400} text={text} size={"18px"} color={"#FFFFFF"} paddingX={2} align="justify"/>
+                <Text weight={400} text={text} size={"18px"} color={"#FFFF"} paddingX={2} align="justify"/>
             </Stack>
         </Stack>
     )

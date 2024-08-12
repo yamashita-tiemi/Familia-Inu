@@ -3,15 +3,16 @@ import { Heading } from "@chakra-ui/react";
 interface TitleNavbarProps {
     title: string
     size: string
+    color: string
 }
 
-export function TitleNavbar({ title, size }:TitleNavbarProps) {
+export function TitleNavbar({ title, size, color }:TitleNavbarProps) {
     return(
         <Heading
             as="h3"
             fontSize={size}
             fontWeight={800}
-            color={"#CB4817"}
+            color={color}
         >
             {title}
         </Heading>
