@@ -1,4 +1,31 @@
 :root {
+    /*MEU ESTILO*/
+    --green-dark: #6C722B;
+    --green-light: #A6AE4F;
+    --red: #CB4817;
+    --orange: #F2933C;
+    --yellow: #F2C94C;
+    --bg-primary: #A6AE4F;
+    --bg-secondary: #F9F3EC;
+    --bg-tertiary: #F2933C;
+    --color-primary: #CB4817;
+    --color-secondary: rgba(203, 72, 23, 0.8);
+    --color-tertiary: rgba(203, 72, 23, 0.3);
+    --color-quaternary: rgba(203, 72, 23, 0.2);
+    --text-black: black;
+    --text-white: white;
+    --bg-nb: #FBF2EC;
+
+    /* Adicionando cores de texto e fundo para um design completo */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --background-primary: #FFFFFF;
+    --background-secondary: #F5F5F5;
+
+
+
+
+
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
