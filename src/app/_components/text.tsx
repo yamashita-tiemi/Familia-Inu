@@ -47,10 +47,10 @@ interface TextProps {
     color: string
     paddingX?: number
     paddingY?: number
-    w: string
+    w?: string
 }
 
-export function Text({ text, size, color, paddingX, paddingY, w }: TextProps) {
+export function Text({ text, size, color, paddingX, paddingY, w  }: TextProps) {
     return (
         <Heading
             as="p"
@@ -60,6 +60,7 @@ export function Text({ text, size, color, paddingX, paddingY, w }: TextProps) {
             w={w}
             paddingX={paddingX}
             paddingY={paddingY}
+            textAlign={"justify"}
         >
             {text}
         </Heading>

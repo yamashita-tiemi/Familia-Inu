@@ -40,41 +40,41 @@ export function IconSocialCard() {
     return (
         <HStack
             // bg={"blue"}
-            width={"50%"}
+            width={"60%"}
             justifyContent={"space-between"}
         >
             <Link as={NextLink} href={'https://web.whatsapp.com/'} isExternal={true}
                 borderRadius={"50%"}
                 border={"dashed"}
-                borderColor={"#FFFFFF"}
+                borderColor={"#CB4817"}
                 padding={2}
                 justifyContent={"center"}
                 alignItems={"center"}
                 opacity={0.9}
             >
-                <FaWhatsapp size={"44px"} color="#FFFFFF" />
+                <FaWhatsapp size={"44px"} color="#CB4817" />
             </Link>
             <Link as={NextLink} href={'https://www.instagram.com/'} isExternal={true}
                 borderRadius={"50%"}
                 border={"dashed"}
-                borderColor={"#FFFFFF"}
+                borderColor={"#CB4817"}
                 padding={2}
                 justifyContent={"center"}
                 alignItems={"center"}
                 opacity={0.9}
             >
-                <FaInstagram size={"44px"} color="#FFFFFF" />
+                <FaInstagram size={"44px"} color="#CB4817" />
             </Link>
             <Link as={NextLink} href={'https://www.instagram.com/'} isExternal={true}
                 borderRadius={"50%"}
                 border={"dashed"}
-                borderColor={"#FFFFFF"}
+                borderColor={"#CB4817"}
                 padding={2}
                 justifyContent={"center"}
                 alignItems={"center"}
                 opacity={0.9}
             >
-                <FaTiktok size={"44px"} color="#FFFFFF" />
+                <FaTiktok size={"44px"} color="#CB4817" />
             </Link>
         </HStack>
     )

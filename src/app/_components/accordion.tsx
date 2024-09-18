@@ -18,7 +18,7 @@ export function AccordionItemCard({ title, text }: AccordionItemCardProps) {
                     minHeight={"60px"}
                     borderRadius={"6px"}
                 >
-                    <Box as='span' flex='1' textAlign='left'>
+                    <Box as='span' flex='1' textAlign='left' paddingLeft={5}>
                         <TitleAccordion title={title}/>
                     </Box>
                     <AccordionIcon />
