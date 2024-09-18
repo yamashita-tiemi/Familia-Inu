@@ -79,15 +79,16 @@ export function TitleButton({ title, size }:TitleButtonProps) {
 interface TitleCardProps {
     title: string
     size: string
+    color: string
 }
 
-export function TitleCard({ title, size }:TitleCardProps) {
+export function TitleCard({ title, size, color }:TitleCardProps) {
     return(
         <Heading
             as="h5"
             fontSize={size}
             fontWeight={600}
-            color={"#FFFFFF"}
+            color={color}
         >
             {title}
         </Heading>

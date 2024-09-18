@@ -1,7 +1,7 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, HStack, Stack } from "@chakra-ui/react";
 import { ArticleDaily, ArticleIndexPrimary } from "./article";
 import { TitleCard, TitlePage, TitleSection } from "./tittle";
-import { Image } from "./image";
+import { Image, ImageFooter } from "./image";
 import { CardReview } from "./card";
 import { IconCard, IconSocialCard } from "./icon";
 import { Text, TextCard } from "./text";
@@ -11,7 +11,7 @@ export function SectionIndexPrimary() {
     return (
         <Stack
             as="section"
-            bg={"#A6AE4F"}
+            bg={"#6C722B"}
             width={"100%"}
             height={"720px"}
             paddingX={20}
@@ -91,7 +91,7 @@ export function SectionAbout() {
     return (
         <Stack
             as="section"
-            // bg={"pink"}
+            bg={"#6C722B"}
             width={"100%"}
             height={"720px"}
             paddingX={20}
@@ -100,7 +100,7 @@ export function SectionAbout() {
             alignItems={"center"}
             paddingTop={"70px"}
         >
-            <TitlePage title={"Sobre"} size={"42px"} color={"#CB4817"} />
+            <TitlePage title={"Sobre"} size={"42px"} color={"#FFFFFF"} />
             <HStack
                 // bg={"blue"}
                 width={"90%"}
@@ -117,7 +117,7 @@ export function SectionAbout() {
                     alignItems={"center"}
                     paddingX={8}
                 >
-                    <TitleCard title={"Vitória Alexandre"} size={"32px"} />
+                    <TitleCard title={"Vitória Alexandre"} size={"32px"} color={"#FFFFFF"} />
                     <Text text={"orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore "} size={"24px"} color={"#FFFFFF"} w={"100%"} />
                 </Stack>
                 <Stack
@@ -129,8 +129,8 @@ export function SectionAbout() {
                     alignItems={"center"}
                     paddingX={8}
                 >
-                    <TitleCard title={"Venha conhecer nosso trabalho!"} size={"28px"} />
-                    <TitleCard title={"Entre em contato conosco"} size={"32px"} />
+                    <TitleCard title={"Venha conhecer nosso trabalho!"} size={"28px"} color={"#FFFFFF"} />
+                    <TitleCard title={"Entre em contato conosco"} size={"32px"} color={"#FFFFFF"} />
                     <IconSocialCard />
                 </Stack>
             </HStack>
@@ -143,6 +143,7 @@ export function SectionFAQ() {
         <Stack
             justifyContent={"center"}
             alignItems={"center"}
+            paddingTop={20}
         >
             <TitleSection title={"Perguntas Frequentes"} size={"42px"} />
 
@@ -162,5 +163,44 @@ export function SectionFAQ() {
                     text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore "}/>
             </Accordion>
         </Stack>
+    )
+}
+
+
+export function SectionPerfil() {
+    return (
+        <HStack
+            as="section"
+            bg={"#FFFFFF"}
+            width={"100%"}
+            height={"720px"}
+            // paddingX={20}
+            // paddingBottom={10}
+            marginBottom={10}
+            justifyContent={"center"}
+            alignItems={"center"}
+            paddingTop={"70px"}
+            borderRadius={10}
+        >
+            <HStack
+                bg={'#CBD185'}
+                height={'100%'}
+                width={"15%"}
+                borderRadius={10}
+            >
+                lado esquerdo
+            </HStack>
+            <HStack
+                // bg={"blue"}
+                height={"100%"}
+                width={"85%"}
+                justifyContent={"center"}
+                alignItems={"center"}
+            >
+                {/* <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100} w="10%"/> */}
+                <TitleCard title={"Joãozinho da Silva"} size={"24px"} color="#CB4817"/>
+            </HStack>
+            
+        </HStack>
     )
 }

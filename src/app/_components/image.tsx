@@ -26,12 +26,13 @@ interface ImageFooterProps {
     alt: string
     width: number
     height: number
+    w?: string
 }
 
-export function ImageFooter({ src, alt, width, height }: ImageFooterProps) {
+export function ImageFooter({ src, alt, width, height, w }: ImageFooterProps) {
     return (
         <Link as={NextLink} href="/"
-            width={"10%"}
+            width={w}
             borderRadius={"16px"}
         >
             <Stack as="picture" align={"center"}>

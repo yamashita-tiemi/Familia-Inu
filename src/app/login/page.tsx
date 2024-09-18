@@ -1,5 +1,5 @@
 import { Stack } from '@chakra-ui/react';
-import Navbar from '../_components/navbar';
+import {Navbar} from '../_components/navbar';
 import { ExplanatorySection } from '../_components/ExplanatorySection';
 import { LoginForm } from '../_components/LoginForm';
 import '../globals.css';

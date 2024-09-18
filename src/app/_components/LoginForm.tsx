@@ -1,4 +1,5 @@
 import { Stack, Heading, Input, Button } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 export function LoginForm() {
     return (
@@ -36,6 +37,8 @@ export function LoginForm() {
                 />
             </Stack>
             <Button
+                as={NextLink}
+                href="/perfil"
                 bg="#CB4817"
                 color="white"
                 variant="solid"

@@ -15,7 +15,7 @@ export default function Footer() {
             paddingX={10}
             marginTop={10}
         >
-            <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100}/>
+            <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100} w="10%"/>
             <Stack width={"50%"}>
                 <TitleCard title={"Missão"} size={"18px"}/>
                 <Text size={"20px"} color={"#FFFFFF"}
