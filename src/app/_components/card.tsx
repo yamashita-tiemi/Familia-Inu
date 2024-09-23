@@ -31,7 +31,7 @@ export function CardReview({ title, text, icon1, icon2, icon3, icon4, icon5, w }
                 height={"25%"}
                 justifyContent={"space-around"}
             >
-                <TitleCard title={title} size={"28px"} />
+                <TitleCard title={title} size={"28px"} color={"#FFFFFF"} />
                 <HStack
                     width={"90%"}
                     justifyContent={"space-evenly"}

@@ -13,6 +13,7 @@ export default function Footer() {
             height={"100px"}
             justifyContent={"space-around"}
             paddingX={10}
+            marginTop={10}
         >
             <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={80} height={100}/>
             <Stack width={"50%"} justifyContent="space-around" >

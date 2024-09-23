@@ -2,13 +2,14 @@
 
 import React, { useState } from 'react';
 import { Stack, Box, Flex } from '@chakra-ui/react';
-import Navbar from '../_components/navbar';
+import { Navbar } from '../_components/navbar';
 import AppointmentForm from '../_components/AppointmentForm';
 import CalendarComponent from '../_components/CalendarComponent';
 import Footer from '../_components/footer';
 
+
 const AgendaPage = () => {
-  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [ startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [tutorName, setTutorName] = useState("João Silva"); // Simulação do nome do tutor
   const [petName, setPetName] = useState("Rex"); // Simulação do nome do pet
@@ -21,6 +22,7 @@ const AgendaPage = () => {
   return (
     <>
       <Navbar />
+      <h1>Ola</h1>
       <Stack
         spacing={0}
         align="center"
@@ -37,7 +39,6 @@ const AgendaPage = () => {
           bg="#F9F3EC"
           borderRadius="md"
           boxShadow="md"
-          spacing={10}
         >
           <Box width="50%" height="100%">
             <CalendarComponent

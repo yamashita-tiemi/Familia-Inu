@@ -80,14 +80,32 @@ export function TitleButton({ title, size }:TitleButtonProps) {
 interface TitleCardProps {
     title: string
     size: string
+    color: string
 }
 
-export function TitleCard({ title, size }:TitleCardProps) {
+export function TitleCard({ title, size, color }:TitleCardProps) {
     return(
         <Heading
             as="h5"
             fontSize={size}
             fontWeight={600}
+            color={color}
+        >
+            {title}
+        </Heading>
+    )
+}
+
+interface TitleAccordionProps {
+    title: string
+}
+
+export function TitleAccordion({ title }:TitleAccordionProps) {
+    return(
+        <Heading
+            as="h5"
+            fontSize={"20px"}
+            fontWeight={500}
             color={"#FFFFFF"}
         >
             {title}

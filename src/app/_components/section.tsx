@@ -1,7 +1,7 @@
-import { HStack, Stack } from "@chakra-ui/react";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, HStack, Stack } from "@chakra-ui/react";
 import { ArticleDaily, ArticleIndexPrimary } from "./article";
 import { TitleCard, TitlePage, TitleSection } from "./tittle";
-import { Image } from "./image";
+import { Image, ImageFooter } from "./image";
 import { CardReview } from "./card";
 import { IconCard, IconSocialCard } from "./icon";
 import { Text, TextCard } from "./text";
@@ -46,7 +46,7 @@ export function SectionIndexReview() {
             justifyContent={"center"}
             alignItems={"center"}
         >
-            <TitleSection title={"Avaliações"} size={"42px"}/>
+            <TitleSection title={"Avaliações"} size={"42px"} />
             <HStack
                 width={"90%"}
                 paddingTop={12}
@@ -65,7 +65,7 @@ export function SectionIndexReview() {
                     title={"Márcia Silva"} text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis ipsum a leo laoreet ultricies eget id urna. Quisque non maximus neque."} 
                 />
             </HStack>
-            
+
         </Stack>
     );
 }
@@ -101,7 +101,7 @@ export function SectionAbout() {
             alignItems={"center"}
             paddingTop={"70px"}
         >
-            <TitlePage title={"Sobre"} size={"42px"} color={"#CB4817"}/>
+            <TitlePage title={"Sobre"} size={"42px"} color={"#FFFFFF"} />
             <HStack
                 width={"90%"}
                 height={"450px"}
@@ -117,7 +117,7 @@ export function SectionAbout() {
                     alignItems={"center"}
                     paddingX={8}
                 >
-                    <TitleCard title={"Vitória Alexandre"} size={"32px"}/>
+                    <TitleCard title={"Vitória Alexandre"} size={"32px"} color={""}/>
                     <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore "} size={"24px"} color={"#FFFFFF"} w={"100%"}/>
                 </Stack>
                 <Stack
@@ -129,9 +129,9 @@ export function SectionAbout() {
                     alignItems={"center"}
                     paddingX={8}
                 >
-                    <TitleCard title={"Venha conhecer nosso trabalho!"} size={"28px"}/>
-                    <TitleCard title={"Entre em contato conosco"} size={"32px"}/>
-                    <IconSocialCard/>
+                    <TitleCard title={"Venha conhecer nosso trabalho!"} size={"28px"} color={"#FFFFFF"} />
+                    <TitleCard title={"Entre em contato conosco"} size={"32px"} color={"#FFFFFF"} />
+                    <IconSocialCard />
                 </Stack>
             </HStack>
         </Stack>

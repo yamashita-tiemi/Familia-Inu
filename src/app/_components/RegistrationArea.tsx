@@ -2,42 +2,10 @@
 
 import { Stack, Button, Box } from '@chakra-ui/react';
 import { useState } from 'react';
-import { TutorForm } from './TutorForm';
 import { PetForm } from './PetForm';
+import TutorForm from './TutorForm';
 
 const RegistrationArea = () => {
-  const [tutor, setTutor] = useState({
-    nome: '',
-    endereco: '',
-    telefone: '',
-    email: '',
-    senha: '',
-  });
-
-  const [pet, setPet] = useState({
-    nome: '',
-    raca: '',
-    porte: '',
-    cor: '',
-    observacao: '',
-  });
-
-  const handleTutorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setTutor({ ...tutor, [name]: value });
-  };
-
-  const handlePetChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setPet({ ...pet, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você pode fazer a submissão dos dados dos formulários
-    console.log('Tutor Data:', tutor);
-    console.log('Pet Data:', pet);
-  };
 
   return (
     <Stack 
@@ -65,19 +33,8 @@ const RegistrationArea = () => {
         paddingTop={20}
       >
         <Stack direction={["column", "row"]} spacing={4}>
-          <TutorForm tutor={tutor} onTutorChange={handleTutorChange} />
-          <PetForm pet={pet} onPetChange={handlePetChange} />
+          <TutorForm  />
         </Stack>
-        <Button 
-          margin="0 auto"
-          bg="#CB4817" 
-          color="white" 
-          width="20em" 
-          _hover={{ bg: "#F2933C" }} 
-          onClick={handleSubmit}
-        >
-          Registrar
-        </Button>
       </Stack>
     </Stack>
   );
