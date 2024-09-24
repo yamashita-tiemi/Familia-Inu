@@ -1,4 +1,22 @@
 :root {
+    /*MEU ESTILO*/
+    --green1: #6C722B;
+    --green2: #A6AE4F;
+    --orange1: #CB4817;
+    --orange2: #F2933C;
+    --yellow1: #F2C94C;
+    --white1: #ffff
+
+    /* Adicionando cores de texto e fundo para um design completo */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --background-primary: #FFFFFF;
+    --background-secondary: #F5F5F5;
+
+
+
+
+
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -39,6 +57,8 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -105,3 +125,93 @@ a {
     color-scheme: dark;
   }
 }
+
+
+
+
+  /* Estilos para o calendário */
+  .react-big-calendar {
+    width: 100%;
+    height: calc(100vh - 70px); /* Garante que ocupe toda a altura menos a navbar */
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    background-color: var(--background-primary);
+  }
+  
+  .rbc-toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: var(--green-light);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .rbc-toolbar button {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .rbc-toolbar button:hover {
+    background-color: var(--red);
+  }
+  
+  .rbc-event {
+    background-color: var(--red) !important;
+    color: white !important;
+  }
+  
+  .rbc-selected {
+    background-color: var(--yellow) !important;
+  }
+  
+  .rbc-day-bg {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--background-secondary);
+  }
+  
+  .rbc-date-cell {
+    color: var(--green-dark);
+  }
+  
+  .rbc-date-cell:hover {
+    background-color: var(--green-light);
+  }
+  
+  .rbc-month-view {
+    background-color: var(--background-primary);
+  }
+  
+  .rbc-header {
+    background-color: var(--green-dark);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  
+
+/* Estilo global para a barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #FBF2EC;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--green-dark);
+    border-radius: 1px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--green-dark);
+  }
