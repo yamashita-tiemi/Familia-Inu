@@ -176,3 +176,33 @@ export function SectionFAQ() {
         </Stack>
     );
 }
+
+export function SectionPerfil() {
+    return (
+        <HStack
+            as="section"
+            bg={"#FFFFFF"}
+            width={"100%"}
+            height={"720px"}
+            // paddingX={20}
+            // paddingBottom={10}
+            marginBottom={10}
+            justifyContent={"center"}
+            alignItems={"center"}
+            paddingTop={"70px"}
+            borderRadius={10}
+        >
+            <HStack
+                // bg={"blue"}
+                height={"100%"}
+                width={"85%"}
+                justifyContent={"center"}
+                alignItems={"center"}
+            >
+                {/* <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100} w="10%"/> */}
+                <TitleCard title={"Joãozinho da Silva"} size={"24px"} color="#CB4817"/>
+            </HStack>
+            
+        </HStack>
+    )
+}
