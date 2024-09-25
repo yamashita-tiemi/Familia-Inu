@@ -68,7 +68,7 @@ export function NavbarAdmin() {
                     <TitleNavbar color="" title={"Reservas"} size={"28px"} />
                 </Link>
             </Flex>
-            <Link as={NextLink} href='/perfil' color="#A6AE4F">
+            <Link as={NextLink} href='/perfil/tutor' color="#A6AE4F">
                 <TitleNavbar color="" title={"Perfil"} size={"28px"} />
             </Link>
             {/* <Link as={NextLink} href='/cadastroPet' color="#A6AE4F">

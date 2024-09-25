@@ -112,3 +112,23 @@ export function TitleAccordion({ title }:TitleAccordionProps) {
         </Heading>
     )
 }
+
+interface TitleButtonTutorPetProps {
+    title: string
+    size: string
+    color: string
+}
+
+export function TitleButtonTutorPet({ title, size, color }:TitleButtonTutorPetProps) {
+    return(
+        <Heading
+            as="h4"
+            fontSize={size}
+            fontWeight={800}
+            color={color}
+            textTransform={"uppercase"}
+        >
+            {title}
+        </Heading>
+    )
+}

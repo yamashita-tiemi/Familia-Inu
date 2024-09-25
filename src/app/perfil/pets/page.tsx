@@ -78,8 +78,8 @@ export default function Perfil() {
                             width={"100%"}
                             height={"80px"}
                         >
-                            <ButtonTutorPet title={"Tutor"} href={"/perfil/tutor"} w="50%"></ButtonTutorPet>
-                            <ButtonTutorPet title={"Pets"} href={"/perfil/pets"} w="50%"></ButtonTutorPet>
+                            <ButtonTutorPet title={"Tutor"} href={"/perfil/tutor"} w="50%" bg={"#FFFFFF"} color={"#CB4817"}></ButtonTutorPet>
+                            <ButtonTutorPet title={"Pets"} href={"/perfil/pets"} w="50%" bg={"#CB4817"} color={"#FFFFFF"}></ButtonTutorPet>
                         </HStack>
                         {/* <ViewPet /> */}
                         <Stack

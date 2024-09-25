@@ -1,6 +1,6 @@
 import { Box, HStack, Link } from "@chakra-ui/react"
 import NextLink from "next/link";
-import { TitleButton, TitleNavbar } from "./tittle";
+import { TitleButton, TitleButtonTutorPet, TitleNavbar } from "./tittle";
 import React from "react";
 
 interface ButtonProps {
@@ -91,27 +91,35 @@ export function ButtonPerfil({ title, href, w }: ButtonPerfilProps) {
 //     )
 // }
 
-export function ButtonTutorPet({ title, href, w }: ButtonProps) {
+interface ButtonTutorPetProps {
+    title: string
+    href: string
+    w?: string
+    bg: string
+    color: string
+}
+
+export function ButtonTutorPet({ title, href, w, bg, color }: ButtonTutorPetProps) {
     return (
         <Link
             as={NextLink}
             href={href}
-            backgroundColor={"#CB4817"}
+            backgroundColor={bg}
             _hover={{ bg: "#F2933C" }}
             borderRadius={"10px"}
-            color={"#FFFFFF"}
             width={w}
             paddingY={3}
             marginBottom={2}
             marginTop={10}
             minWidth={"100px"}
+            border={"1px solid #CB4817"}
         >
             <Box
                 as='button'
                 width={"100%"}
             >
                 <HStack justifyContent={"center"}>
-                    <TitleButton title={title} size={"20px"} />
+                    <TitleButtonTutorPet title={title} size={"20px"} color={color} />
                 </HStack>
             </Box>
         </Link>
