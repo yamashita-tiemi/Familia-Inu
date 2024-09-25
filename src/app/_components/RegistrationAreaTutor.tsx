@@ -1,11 +1,9 @@
 'use client';
 
 import { Stack, Button, Box } from '@chakra-ui/react';
-import { useState } from 'react';
-import { PetForm } from './PetForm';
 import TutorForm from './TutorForm';
 
-const RegistrationArea = () => {
+const RegistrationAreaTutor = () => {
 
   return (
     <Stack 
@@ -40,4 +38,4 @@ const RegistrationArea = () => {
   );
 };
 
-export default RegistrationArea;
+export default RegistrationAreaTutor;

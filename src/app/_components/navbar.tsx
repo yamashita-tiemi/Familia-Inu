@@ -53,17 +53,20 @@ export function NavbarAdmin() {
                 gap={"10"}
             >
                 <Link as={NextLink} href='/' color="#A6AE4F">
-                    <TitleNavbar title={"Home"} size={"28px"} />
+                    <TitleNavbar color="" title={"Home"} size={"28px"} />
                 </Link>
                 <Link as={NextLink} href='/agenda' color="#A6AE4F">
-                    <TitleNavbar title={"Agenda"} size={"28px"} />
+                    <TitleNavbar color="" title={"Agenda"} size={"28px"} />
                 </Link>
                 <Link as={NextLink} href='/sobre' color="#A6AE4F">
-                    <TitleNavbar title={"Sobre"} size={"28px"} />
+                    <TitleNavbar color="" title={"Sobre"} size={"28px"} />
                 </Link>
             </Flex>
             <Link as={NextLink} href='/perfil' color="#A6AE4F">
-                <TitleNavbar title={"Perfil"} size={"28px"} />
+                <TitleNavbar color="" title={"Perfil"} size={"28px"} />
+            </Link>
+            <Link as={NextLink} href='/cadastroPet' color="#A6AE4F">
+                <TitleNavbar color="" title={"Pets"} size={"28px"} />
             </Link>
         </HStack>
     )

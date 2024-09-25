@@ -66,8 +66,8 @@ interface TextProps {
     paddingX?: number;
     paddingY?: number;
     w?: string;
-    weight: number;
-    align: "left" | "center" | "right" | "justify";
+    weight?: number;
+    align?: "left" | "center" | "right" | "justify";
 }
 
 export function Text({ text, size, color, paddingX = 0, paddingY = 0, w = "100%", weight, align }: TextProps) {

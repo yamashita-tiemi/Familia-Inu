@@ -2,13 +2,13 @@
 
 import Footer from '../_components/footer';
 import {Navbar} from '../_components/navbar';
-import RegistrationArea from '../_components/RegistrationArea';
+import RegistrationAreaTutor from '../_components/RegistrationAreaTutor';
 
 export default function Page() {
   return (
     <>
         <Navbar />
-        <RegistrationArea />
+        <RegistrationAreaTutor />
         <Footer/>
     </>
   );

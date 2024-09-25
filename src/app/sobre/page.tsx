@@ -8,7 +8,6 @@ export default function Sobre() {
             <Navbar/>
             <SectionAbout/>
             <SectionFAQ/>
-            <SectionFAQ/>
             <Footer/>
         </>
     )

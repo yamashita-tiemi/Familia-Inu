@@ -97,7 +97,7 @@ export default function TutorForm() {
           margin="0 auto"
           bg="#CB4817" 
           color="white" 
-          width="20em" 
+          width="28em" 
           _hover={{ bg: "#F2933C" }} 
           onClick={cadastroUsuario}
         >

@@ -3,7 +3,7 @@ import { Heading } from "@chakra-ui/react";
 interface TitleNavbarProps {
     title: string
     size: string
-    color: string
+    color ?: string
 }
 
 export function TitleNavbar({ title, size, color }:TitleNavbarProps) {
@@ -22,7 +22,7 @@ export function TitleNavbar({ title, size, color }:TitleNavbarProps) {
 interface TitlePageProps {
     title: string
     size: string
-    color: string
+    color?: string
 }
 
 export function TitlePage ({ title, size, color }:TitlePageProps) {
@@ -80,7 +80,7 @@ export function TitleButton({ title, size }:TitleButtonProps) {
 interface TitleCardProps {
     title: string
     size: string
-    color: string
+    color?: string
 }
 
 export function TitleCard({ title, size, color }:TitleCardProps) {
