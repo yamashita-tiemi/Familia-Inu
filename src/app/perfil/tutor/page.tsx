@@ -94,6 +94,7 @@ export default function Perfil() {
                             <Stack
                                 width={"100%"}
                                 alignItems={"flex-end"}
+                                marginTop={5}
                             >
                                 {/* <Button title={"Editar"} href={""}></Button> */}
                                 <Button
