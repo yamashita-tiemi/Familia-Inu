@@ -7,6 +7,7 @@ import { IconCard, IconSocialCard } from "./icon";
 import { Text, TextCard } from "./text";
 import { FAQItem} from "./FAQItem"; 
 import { Button } from "./button";
+import { ViewPet, ViewTutor } from "./view";
 
 export function SectionIndexPrimary() {
     return (
@@ -183,33 +184,28 @@ export function SectionPerfil() {
         <HStack
             as="section"
             bg={"#FFFFFF"}
-            width={"100%"}
-            height={"720px"}
-            // paddingX={20}
-            // paddingBottom={10}
+            width={"90%"}
+            minHeight={"620px"}
             marginBottom={10}
+            marginTop={"70px"}
             justifyContent={"center"}
-            alignItems={"center"}
-            paddingTop={"70px"}
+            alignItems={"flex-start"}
             borderRadius={10}
         >
             <Stack
-                // bg={"blue"}
                 height={"100%"}
                 width={"85%"}
-                // justifyContent={"center"}
                 alignItems={"center"}
             >
                 <HStack
-                    // bg={"pink"}
                     width={"100%"}
                     height={"80px"}
                 >
                     <Button title={"Tutor"} href={"/"} w="50%"></Button>
                     <Button title={"Pets"} href={"/"} w="50%"></Button>
                 </HStack>
-                {/* <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100} w="10%"/> */}
-                <TitleCard title={"Joãozinho da Silva"} size={"24px"} color="#CB4817"/>
+                <ViewTutor/>
+                {/* <ViewPet/> */}
             </Stack>
             
         </HStack>
