@@ -4,7 +4,7 @@
 
 import { Box, Stack, Input, FormControl, FormLabel, HStack, Heading, Button } from '@chakra-ui/react';
 import { useState } from 'react';
-import { cadastro } from '../cadastro/cadastro-service'; // Ajuste o caminho conforme necessário
+import { cadastro } from '../cadastroTutor/cadastro-service'; // Ajuste o caminho conforme necessário
 
 export const PetForm = () => {
   const [nome, setNome] = useState('');

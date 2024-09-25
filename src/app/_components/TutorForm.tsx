@@ -2,7 +2,7 @@
 
 import { Box, Stack, Input, FormControl, FormLabel, HStack, Heading, Button } from '@chakra-ui/react';
 import { useState } from 'react';
-import {cadastro} from '../cadastro/cadastro-service';
+import {cadastro} from '../cadastroTutor/cadastro-service';
 
 interface TutorFormProps {
   tutor: {
