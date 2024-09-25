@@ -27,7 +27,7 @@ export function ArticleIndexPrimary({ text1, text2, text3 }: ArticleIndexPrimary
                 <TextIndex text={text2} size={"20px"} color={"#FFFFFF"} />
                 <TextIndex text={text3} size={"20px"} color={"#FFFFFF"} />
             </Stack>
-            <Button title={"Agende aqui"} href={"/agenda"} w="30%"></Button>
+            <Button title={"Agende aqui"} href={"/login"} w="30%"></Button>
         </Stack>
     )
 }

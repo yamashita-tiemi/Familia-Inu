@@ -6,6 +6,7 @@ import { CardReview } from "./card";
 import { IconCard, IconSocialCard } from "./icon";
 import { Text, TextCard } from "./text";
 import { FAQItem} from "./FAQItem"; 
+import { Button } from "./button";
 
 export function SectionIndexPrimary() {
     return (
@@ -192,16 +193,24 @@ export function SectionPerfil() {
             paddingTop={"70px"}
             borderRadius={10}
         >
-            <HStack
+            <Stack
                 // bg={"blue"}
                 height={"100%"}
                 width={"85%"}
-                justifyContent={"center"}
+                // justifyContent={"center"}
                 alignItems={"center"}
             >
+                <HStack
+                    // bg={"pink"}
+                    width={"100%"}
+                    height={"80px"}
+                >
+                    <Button title={"Tutor"} href={"/"} w="50%"></Button>
+                    <Button title={"Pets"} href={"/"} w="50%"></Button>
+                </HStack>
                 {/* <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100} w="10%"/> */}
                 <TitleCard title={"Joãozinho da Silva"} size={"24px"} color="#CB4817"/>
-            </HStack>
+            </Stack>
             
         </HStack>
     )
