@@ -85,7 +85,7 @@ export function SectionIndexDaily() { // precisa fazer o carrossel
         >
             <TitleSection title={"Um pouco dos nossos dias"} size={"42px"}/>
             <ArticleDaily src={"/daily_photos/sayuri.png"} alt={"Sayuri"} widthImg={1100} heightImg={372} 
-                text={"Vivencie a rotina especial do nosso hotel pet, onde cada dia é repleto de carinho, diversão e cuidado. Transformamos momentos simples em experiências inesquecíveis para nossos hóspedes de quatro patas. Venha nos visitar e descubra como tratamos cada pet com amor e dedicação, garantindo conforto e alegria em cada estadia."}
+                text={"Vivencie a rotina especial do nosso hotel pet, onde cada dia é cheio de carinho, diversão e cuidado. Transformamos momentos simples em experiências inesquecíveis para nossos hóspedes de quatro patas. Venha nos visitar e descubra como tratamos cada pet com amor e dedicação, garantindo conforto e alegria em cada estadia."}
             />
         </Stack>
     );
