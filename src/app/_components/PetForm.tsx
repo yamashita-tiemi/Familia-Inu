@@ -2,9 +2,10 @@
 
 'use client';
 
-import { Box, Stack, Input, FormControl, FormLabel, HStack, Heading, Button } from '@chakra-ui/react';
+import { Box, Stack, Input, FormControl, FormLabel, HStack, Heading, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 import { useState } from 'react';
 import { cadastro } from '../cadastro/cadastro-service'; // Ajuste o caminho conforme necessário
+import React from 'react';
 
 export const PetForm = () => {
   const [nome, setNome] = useState('');
@@ -22,10 +23,10 @@ export const PetForm = () => {
         cor,
         observacao
       };
-      
+
       await cadastro(pet); // Se houver uma função de cadastro
       console.log("Pet registrado:", pet);
-      
+
       // Limpar os campos após o registro
       setNome('');
       setRaca('');
@@ -108,12 +109,12 @@ export const PetForm = () => {
           />
         </FormControl>
         <FormControl>
-          <Button 
+          <Button
             margin="0 auto"
-            bg="#CB4817" 
-            color="white" 
-            width="28em" 
-            _hover={{ bg: "#F2933C" }} 
+            bg="#CB4817"
+            color="white"
+            width="28em"
+            _hover={{ bg: "#F2933C" }}
             onClick={registrarPet} // Chama a função de registro ao clicar
           >
             Registrar
@@ -123,3 +124,5 @@ export const PetForm = () => {
     </Box>
   );
 };
+
+
