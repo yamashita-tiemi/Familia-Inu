@@ -10,7 +10,8 @@ interface Hospedagem {
   titulo: string;
   data: string; // Formato original da data
   status: string;
-  pet: string;  // Campo do pet hospedado
+  pet: string; 
+  tutor: string;
 }
 
 interface MinhasHospedagensProps {
@@ -23,23 +24,26 @@ const MinhasHospedagens = ({ hospedagens = [] }: MinhasHospedagensProps) => {
     {
       id: '1',
       titulo: 'Hospedagem de Teste 1',
-      data: '2024-09-25', // Formato original da data
+      data: '2024-09-25', 
       status: 'Confirmada',
-      pet: 'Rex',  // Nome fictício do pet
+      pet: 'Rex',  
+      tutor: 'Vitoria',  
     },
     {
       id: '2',
       titulo: 'Hospedagem de Teste 2',
-      data: '2024-09-25', // Formato original da data
+      data: '2024-09-25', 
       status: 'Confirmada',
-      pet: 'Rex',  // Nome fictício do pet
+      pet: 'Rex', 
+      tutor: 'Vitoria',  
     },
     {
       id: '3',
       titulo: 'Hospedagem de Teste 3',
-      data: '2024-09-25', // Formato original da data
+      data: '2024-09-25', 
       status: 'Confirmada',
-      pet: 'Rex',  // Nome fictício do pet
+      pet: 'Rex',  
+      tutor: 'Vitoria',  
     },
   ];
 
@@ -59,7 +63,7 @@ const MinhasHospedagens = ({ hospedagens = [] }: MinhasHospedagensProps) => {
         display="flex" 
         flexDirection="column" 
         alignItems="center"
-        marginTop="70px" // Adicionando espaço para a navbar
+        marginTop="70px"
       >
         <Heading mb={6} color="#CB4817">Minhas Hospedagens</Heading>
         <Stack spacing={4} width="100%">

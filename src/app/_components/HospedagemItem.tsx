@@ -1,4 +1,3 @@
-// HospedagemItem.tsx
 
 import { Box, Text, Button } from '@chakra-ui/react';
 
@@ -8,6 +7,7 @@ interface Hospedagem {
   data: string;
   status: string;
   pet: string;
+  tutor: string;
 }
 
 interface HospedagemItemProps {
@@ -31,6 +31,7 @@ const HospedagemItem = ({ hospedagem, formatarData }: HospedagemItemProps) => {
     >
       <Text fontWeight="bold" color="#CB4817">{hospedagem.titulo}</Text>
       <Text color="#6C722B">Data: {formatarData(hospedagem.data)}</Text>
+      <Text color="#6C722B">Tutor: {hospedagem.tutor}</Text>
       <Text color="#6C722B">Pet: {hospedagem.pet}</Text>
       <Text color="#F2933C">Status: {hospedagem.status}</Text>
       <Button colorScheme="teal" bg="#CB4817" _hover={{ bg: '#F2933C' }}>Detalhes</Button>
