@@ -10,7 +10,7 @@ export function Label({ text, content }:LabelProps) {
     return (
         <HStack
             padding={2}
-            border={"1px solid gray"}
+            border={"1px solid #CB4817"}
             borderRadius={"10px"}
             width={"100%"}
         >
