@@ -4,7 +4,7 @@
 
 import { Box, Stack, Input, FormControl, FormLabel, HStack, Heading, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 import { useState } from 'react';
-import { cadastro } from '../cadastro/cadastro-service'; // Ajuste o caminho conforme necessário
+import { cadastro } from '../cadastroTutor/cadastro-service'; // Ajuste o caminho conforme necessário
 import React from 'react';
 
 export const PetForm = () => {

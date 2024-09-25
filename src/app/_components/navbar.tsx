@@ -17,7 +17,7 @@ export function Navbar() {
         >
             <ImageNavbar src={"/logo.png"} alt={"Família Inu"} width={165} height={95}/>
             <Flex
-                gap={"10"}
+                gap={"5"}
             >
                 <Link as={NextLink} href='/' color="#A6AE4F">
                     <TitleNavbar color="#F2933C" title={"Home"} size={"28px"} />
@@ -27,6 +27,9 @@ export function Navbar() {
                 </Link>
                 <Link as={NextLink} href='/sobre' color="#A6AE4F">
                     <TitleNavbar color="#F2933C" title={"Sobre"} size={"28px"} />
+                </Link>
+                <Link as={NextLink} href='/hospedagensUsuario' color="#A6AE4F">
+                    <TitleNavbar color="#F2933C" title={"Reservas"} size={"28px"} />
                 </Link>
             </Flex>
             <Link as={NextLink} href='/login' color="#A6AE4F">

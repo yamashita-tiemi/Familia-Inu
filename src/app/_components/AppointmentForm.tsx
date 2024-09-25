@@ -1,15 +1,19 @@
+// components/AppointmentForm.tsx
+
 import React, { useState, useEffect } from 'react';
-import { Stack, Input, Button, Text, Textarea, Box } from '@chakra-ui/react';
+import { Stack, Input, Button, Text, Textarea, Box, Select } from '@chakra-ui/react';
+import moment from 'moment';
 
 interface AppointmentFormProps {
   startDate: Date | null;
   endDate: Date | null;
   tutorName: string;
   petName: string;
+  petOptions: string[]; // Adicionando uma propriedade para opções de pets
   onDateChange: (start: Date, end: Date) => void;
 }
 
-const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, tutorName, petName, onDateChange }) => {
+const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, tutorName, petName, petOptions, onDateChange }) => {
   const [localStartDate, setLocalStartDate] = useState<string>(startDate ? startDate.toLocaleDateString('pt-BR') : '');
   const [localEndDate, setLocalEndDate] = useState<string>(endDate ? endDate.toLocaleDateString('pt-BR') : '');
 
@@ -51,7 +55,15 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, t
         <Input value={tutorName} readOnly placeholder="Nome do Tutor" />
 
         <Text fontWeight="bold">Nome do Pet</Text>
-        <Input value={petName} readOnly placeholder="Nome do Pet" />
+        <Select
+          value={petName}
+          onChange={(e) => onDateChange(startDate!, endDate!)} // Adicione a lógica para atualizar o nome do pet
+          placeholder="Selecione um Pet"
+        >
+          {petOptions.map((pet) => (
+            <option key={pet} value={pet}>{pet}</option>
+          ))}
+        </Select>
 
         <Text fontWeight="bold">Data de Entrada</Text>
         <Input

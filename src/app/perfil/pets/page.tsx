@@ -5,8 +5,7 @@ import Footer from "@/app/_components/footer"
 import { NavbarAdmin } from "@/app/_components/navbar"
 import { SectionPerfil } from "../../_components/section"
 import { ViewPet, ViewTutor } from "@/app/_components/view"
-// import { Button } from "@/app/_components/button"
-import { cadastro } from "@/app/cadastro/cadastro-service"
+// import { cadastro } from "@/app/cadastro/cadastro-service"
 import React, { useState } from "react"
 import { TitleButton, TitleSection } from "@/app/_components/tittle";
 import { ButtonTutorPet } from "@/app/_components/button";
@@ -35,7 +34,7 @@ export default function Perfil() {
                 observacao
             };
 
-            await cadastro(pet); // Se houver uma função de cadastro
+            // await cadastro(pet); // Se houver uma função de cadastro
             console.log("Pet registrado:", pet);
 
             // Limpar os campos após o registro

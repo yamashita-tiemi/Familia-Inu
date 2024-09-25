@@ -1,3 +1,5 @@
+// pages/agenda.tsx
+
 'use client';
 
 import React, { useState } from 'react';
@@ -7,14 +9,15 @@ import AppointmentForm from '../_components/AppointmentForm';
 import CalendarComponent from '../_components/CalendarComponent';
 import Footer from '../_components/footer';
 
-
 const AgendaPage = () => {
-  const [ startDate, setStartDate] = useState<Date | null>(null);
+  const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
-  const [tutorName, setTutorName] = useState("João Silva"); // Simulação do nome do tutor
-  const [petName, setPetName] = useState("Rex"); // Simulação do nome do pet
+  
+  // Simulação dos dados do usuário logado
+  const tutorName = "João Silva"; // Nome do tutor logado
+  const petOptions = ["Rex", "Bella", "Max"]; // Pets cadastrados pelo tutor
 
-  const handleDateRangeChange = (start: Date, end: Date) => {
+  const handleDateRangeChange = (start: Date | null, end: Date | null) => {
     setStartDate(start);
     setEndDate(end);
   };
@@ -22,7 +25,6 @@ const AgendaPage = () => {
   return (
     <>
       <Navbar />
-      <h1>Ola</h1>
       <Stack
         spacing={0}
         align="center"
@@ -42,8 +44,6 @@ const AgendaPage = () => {
         >
           <Box width="50%" height="100%">
             <CalendarComponent
-              startDate={startDate}
-              endDate={endDate}
               onDateRangeChange={handleDateRangeChange}
             />
           </Box>
@@ -52,13 +52,14 @@ const AgendaPage = () => {
               startDate={startDate}
               endDate={endDate}
               tutorName={tutorName}
-              petName={petName}
+              petName="" // Inicialmente vazio ou pode ser preenchido com uma opção padrão
+              petOptions={petOptions} // Passando as opções de pets
               onDateChange={handleDateRangeChange}
             />
           </Box>
         </Flex>
       </Stack>
-      <Footer/>
+      <Footer />
     </>
   );
 };
