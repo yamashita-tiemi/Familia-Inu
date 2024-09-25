@@ -1,10 +1,9 @@
-'use client'
 import React, { useState, useEffect } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Box, useColorModeValue, Text, ChakraProvider, extendTheme, HStack } from '@chakra-ui/react';
+import { Box, useColorModeValue, Text, ChakraProvider, extendTheme, HStack, Button, Flex } from '@chakra-ui/react';
 
 moment.locale('pt-br');
 const localizer = momentLocalizer(moment);
@@ -15,12 +14,13 @@ interface CalendarComponentProps {
 
 const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange }) => {
   const [selectedRange, setSelectedRange] = useState<{ start: Date | null; end: Date | null }>({ start: null, end: null });
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = useColorModeValue('gray.800', 'white');
   const primaryColor = useColorModeValue('orange.500', 'orange.300');
   const hoverColor = useColorModeValue('orange.100', 'orange.800');
-  const selectColor = useColorModeValue('orange.400', 'orange.900'); // Cor laranja fixa para o intervalo
+  const selectColor = useColorModeValue('orange.400', 'orange.900');
 
   const theme = extendTheme({
     styles: {
@@ -88,7 +88,6 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange
     };
 
     const classNames = [];
-
     const today = moment().startOf('day');
 
     if (moment(date).isBefore(today)) {
@@ -119,52 +118,63 @@ const CalendarComponent: React.FC<CalendarComponentProps> = ({ onDateRangeChange
     };
   };
 
+  const handleNextMonth = () => {
+    setCurrentDate(moment(currentDate).add(1, 'months').toDate());
+  };
+
+  const handlePrevMonth = () => {
+    setCurrentDate(moment(currentDate).subtract(1, 'months').toDate());
+  };
+
   return (
     <ChakraProvider theme={theme}>
-      <Box bg={bgColor} color={textColor} p={4} borderRadius="md" boxShadow="md" height="600px">
-        <Calendar
-          localizer={localizer}
-          selectable
-          onSelectSlot={handleSelectSlot}
-          style={{ height: '100%' }}
-          defaultView="month"
-          views={['month']}
-          popup
-          dayPropGetter={dayStyleGetter}
-          messages={{
-            allDay: 'Todo o dia',
-            previous: 'Anterior',
-            next: 'Próximo',
-            today: 'Hoje',
-            month: 'Mês',
-            week: 'Semana',
-            day: 'Dia',
-            agenda: 'Agenda',
-            showMore: (total) => `+ Mais ${total}`
-          }}
-          components={{
-            toolbar: CustomToolbar,
-          }}
-        />
+      <Box bg={bgColor} color={textColor} p={4} borderRadius="md" boxShadow="md" height="600px" overflow="hidden">
+        
+        <Flex justifyContent="space-between" mb={4}>
+          <Button onClick={handlePrevMonth} color="white" _hover={{ bg: "var(--orange2)" }} bg="#CB4817" >Mês Anterior</Button>
+          <Text fontSize="xl" fontWeight="bold" textAlign="center">{moment(currentDate).format('MMMM YYYY')}</Text>
+          <Button onClick={handleNextMonth} color="white" _hover={{ bg: "var(--orange2)" }} bg="#CB4817" >Próximo Mês</Button>
+        </Flex>
+
+        <Box style={{ height: 'calc(100% - 70px)', overflowY: 'auto' }}> {/* Ajuste a altura do calendário */}
+          <Calendar
+            localizer={localizer}
+            selectable
+            onSelectSlot={handleSelectSlot}
+            style={{ height: '100%', overflowX: 'hidden' }} // Adicione overflowX para evitar rolagem horizontal
+            defaultView="month"
+            views={['month']}
+            date={currentDate}
+            popup
+            dayPropGetter={dayStyleGetter}
+            components={{
+              toolbar: () => null 
+            }}
+            messages={{
+              allDay: 'Todo o dia',
+              previous: 'Anterior',
+              next: 'Próximo',
+              today: '',
+              month: 'Mês',
+              week: 'Semana',
+              day: 'Dia',
+              agenda: 'Agenda',
+              showMore: (total) => `+ Mais ${total}`
+            }}
+          />
+        </Box>
       </Box>
+      
       <Box mt={4}>
-        <Text mt={2} fontSize={12.8} >
+        <Text mt={2} fontSize={12.8}>
           A hospedagem conta como entrada às 12:00 (meio-dia) da data de check-in e saída às 12:00 (meio-dia) da data de check-out.
         </Text>
         <HStack spacing={4} fontSize={10} color="gray.600">
-          <Text >Check-in: {selectedRange.start ? moment(selectedRange.start).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
-          <Text >Check-out: {selectedRange.end ? moment(selectedRange.end).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
+          <Text>Check-in: {selectedRange.start ? moment(selectedRange.start).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
+          <Text>Check-out: {selectedRange.end ? moment(selectedRange.end).format('DD/MM/YYYY') : 'Não selecionada'}</Text>
         </HStack>
       </Box>
     </ChakraProvider>
-  );
-};
-
-const CustomToolbar = ({ label }: { label: string }) => {
-  return (
-    <Box mb={4} textAlign="center">
-      <Text fontSize="xl" fontWeight="bold">{label}</Text>
-    </Box>
   );
 };
 

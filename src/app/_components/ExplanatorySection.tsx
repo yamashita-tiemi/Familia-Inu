@@ -31,7 +31,7 @@ export function ExplanatorySection() {
             </Text>
             <Button
                 as={NextLink}
-                href="/cadastro"
+                href="/cadastroTutor"
                 bg="#CB4817"
                 color="white"
                 variant="solid"

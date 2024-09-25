@@ -56,7 +56,7 @@ const HospedagensAdmin = () => {
         hospedagem.id === id ? { ...hospedagem, status: 'Confirmada' } : hospedagem
       )
     );
-    // Aqui você pode adicionar a lógica para confirmar a hospedagem (ex. chamada à API)
+    // Aqui você pode adicionar a lógica para confirmar a hospedagem 
   };
 
   const recusarHospedagem = (id: string) => {
@@ -65,7 +65,7 @@ const HospedagensAdmin = () => {
         hospedagem.id === id ? { ...hospedagem, status: 'Recusada' } : hospedagem
       )
     );
-    // Aqui você pode adicionar a lógica para recusar a hospedagem (ex. chamada à API)
+    // Aqui você pode adicionar a lógica para recusar a hospedagem 
   };
 
   return (
