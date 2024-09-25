@@ -14,6 +14,7 @@ import { Label } from "@/app/_components/label";
 
 export default function Perfil() {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isOpenEdit, onOpen: onOpenEdit, onClose: onCloseEdit } = useDisclosure()
 
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
@@ -100,9 +101,9 @@ export default function Perfil() {
                                 justifyContent={"space-between"}
                                 marginTop={5}
                             >
-                                <Button 
+                                <Button
                                     bg={"#CB4817"}
-                                    _hover={{ bg: "#F2933C" }} 
+                                    _hover={{ bg: "#F2933C" }}
                                     minWidth={"100px"}
                                     onClick={onOpen}
                                 >
@@ -116,10 +117,11 @@ export default function Perfil() {
                                         </HStack>
                                     </Box>
                                 </Button>
-                                <Button 
+                                <Button
                                     bg={"#CB4817"}
-                                    _hover={{ bg: "#F2933C" }} 
+                                    _hover={{ bg: "#F2933C" }}
                                     minWidth={"100px"}
+                                    onClick={onOpenEdit}
                                 >
                                     <Box
                                         borderRadius={"16px"}
@@ -137,7 +139,7 @@ export default function Perfil() {
 
                 </HStack>
 
-                {/* ------------------modal-------------- */}
+    {/* ------------------modal-------------- */}
                 <Modal
                     initialFocusRef={initialRef}
                     finalFocusRef={finalRef}
@@ -230,6 +232,107 @@ export default function Perfil() {
                                     onClick={registrarPet} // Chama a função de registro ao clicar
                                 >
                                     Registrar
+                                </Button>
+                            </FormControl>
+
+                        </ModalBody>
+                    </ModalContent>
+                </Modal >
+
+    {/* ------------------modal editar-------------- */}
+                <Modal
+                    initialFocusRef={initialRef}
+                    finalFocusRef={finalRef}
+                    isOpen={isOpenEdit}
+                    onClose={onCloseEdit}
+                >
+                    <ModalOverlay />
+                    <ModalContent>
+                        <ModalHeader bg="#6C722B" color="#FFFFFF">Editar pet</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody pb={6} bg="#6C722B">
+                            <HStack spacing={4} marginY={2}>
+                                <FormControl>
+                                    <FormLabel color="#FFFFFF">Nome do Pet:</FormLabel>
+                                    <Input
+                                        name="nome"
+                                        value={nome}
+                                        onChange={(event) => setNome(event.target.value)}
+                                        bg="#FBF2EC"
+                                        borderColor="#A6AE4F"
+                                        _placeholder={{ color: '#A6AE4F' }}
+                                        _focus={{ borderColor: "#CB4817" }}
+                                        placeholder='Nome do pet'
+                                    />
+                                </FormControl>
+                                <FormControl>
+                                    <FormLabel color="#FFFFFF">Porte:</FormLabel>
+                                    <Input
+                                        name="porte"
+                                        value={porte}
+                                        onChange={(event) => setPorte(event.target.value)}
+                                        bg="#FBF2EC"
+                                        borderColor="#A6AE4F"
+                                        _placeholder={{ color: '#A6AE4F' }}
+                                        _focus={{ borderColor: "#CB4817" }}
+                                        placeholder='Porte'
+                                    />
+                                </FormControl>
+                            </HStack>
+                            <HStack spacing={4} marginY={2}>
+                                <FormControl>
+                                    <FormLabel color="#FFFFFF">Raça:</FormLabel>
+                                    <Input
+                                        name="raca"
+                                        value={raca}
+                                        onChange={(event) => setRaca(event.target.value)}
+                                        bg="#FBF2EC"
+                                        borderColor="#A6AE4F"
+                                        _placeholder={{ color: '#A6AE4F' }}
+                                        _focus={{ borderColor: "#CB4817" }}
+                                        placeholder='Raça'
+                                    />
+                                </FormControl>
+                                <FormControl>
+                                    <FormLabel color="#FFFFFF">Cor:</FormLabel>
+                                    <Input
+                                        name="cor"
+                                        value={cor}
+                                        onChange={(event) => setCor(event.target.value)}
+                                        bg="#FBF2EC"
+                                        borderColor="#A6AE4F"
+                                        _placeholder={{ color: '#A6AE4F' }}
+                                        _focus={{ borderColor: "#CB4817" }}
+                                        placeholder='Cor'
+                                    />
+                                </FormControl>
+                            </HStack>
+                            <FormControl>
+                                <FormLabel color="#FFFFFF">Observações:</FormLabel>
+                                <Input
+                                    name="observacao"
+                                    value={observacao}
+                                    onChange={(event) => setObservacao(event.target.value)}
+                                    bg="#FBF2EC"
+                                    borderColor="#A6AE4F"
+                                    _placeholder={{ color: '#A6AE4F' }}
+                                    _focus={{ borderColor: "#CB4817" }}
+                                    height="100px"
+                                    as="textarea"
+                                    placeholder='Observações'
+                                />
+                            </FormControl>
+                            <FormControl>
+                                <Button
+                                    margin="0 auto"
+                                    bg="#CB4817"
+                                    color="white"
+                                    width="100%"
+                                    _hover={{ bg: "#F2933C" }}
+                                    onClick={registrarPet} // Chama a função de registro ao clicar
+                                    type="submit"
+                                >
+                                    Salvar
                                 </Button>
                             </FormControl>
 
