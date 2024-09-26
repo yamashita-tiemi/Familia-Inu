@@ -4,7 +4,7 @@ interface TextIndexProps {
     text: string;
     size: string;
     color: string;
-    margin: string;
+    margin?: string;
 }
 
 export function TextIndex({ text, size, color, margin }: TextIndexProps) {

@@ -17,7 +17,7 @@ export default function Footer() {
         >
             <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={80} height={100}/>
             <Stack width={"50%"} justifyContent="space-around" >
-                <TitleCard title={"Missão"} size={"12px"}/>
+                <TitleCard title={"Missão"} size={"18px"} color={"#FFFF"}/>
                 <Text size={"20px"} color={"#FFFF"}
                 align="justify" text={"Cuidando do seu pet com amor e dedicação!"} weight={400} />
                 <Text  align="justify" size={"16px"} color={"#FFFF"}

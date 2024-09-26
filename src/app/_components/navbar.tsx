@@ -64,13 +64,16 @@ export function NavbarAdmin() {
                 <Link as={NextLink} href='/sobre' color="#A6AE4F">
                     <TitleNavbar color="" title={"Sobre"} size={"28px"} />
                 </Link>
+                <Link as={NextLink} href='/hospedagensUsuario' color="#A6AE4F">
+                    <TitleNavbar color="" title={"Reservas"} size={"28px"} />
+                </Link>
             </Flex>
-            <Link as={NextLink} href='/perfil' color="#A6AE4F">
+            <Link as={NextLink} href='/perfil/tutor' color="#A6AE4F">
                 <TitleNavbar color="" title={"Perfil"} size={"28px"} />
             </Link>
-            <Link as={NextLink} href='/cadastroPet' color="#A6AE4F">
+            {/* <Link as={NextLink} href='/cadastroPet' color="#A6AE4F">
                 <TitleNavbar color="" title={"Pets"} size={"28px"} />
-            </Link>
+            </Link> */}
         </HStack>
     )
 }

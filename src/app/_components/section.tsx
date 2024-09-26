@@ -6,6 +6,8 @@ import { CardReview } from "./card";
 import { IconCard, IconSocialCard } from "./icon";
 import { Text, TextCard } from "./text";
 import { FAQItem} from "./FAQItem"; 
+import { Button } from "./button";
+import { ViewPet, ViewTutor } from "./view";
 
 export function SectionIndexPrimary() {
     return (
@@ -83,7 +85,7 @@ export function SectionIndexDaily() { // precisa fazer o carrossel
         >
             <TitleSection title={"Um pouco dos nossos dias"} size={"42px"}/>
             <ArticleDaily src={"/daily_photos/sayuri.png"} alt={"Sayuri"} widthImg={1100} heightImg={372} 
-                text={"Vivencie a rotina especial do nosso hotel pet, onde cada dia é repleto de carinho, diversão e cuidado. Transformamos momentos simples em experiências inesquecíveis para nossos hóspedes de quatro patas. Venha nos visitar e descubra como tratamos cada pet com amor e dedicação, garantindo conforto e alegria em cada estadia."}
+                text={"Vivencie a rotina especial do nosso hotel pet, onde cada dia é cheio de carinho, diversão e cuidado. Transformamos momentos simples em experiências inesquecíveis para nossos hóspedes de quatro patas. Venha nos visitar e descubra como tratamos cada pet com amor e dedicação, garantindo conforto e alegria em cada estadia."}
             />
         </Stack>
     );
@@ -182,26 +184,29 @@ export function SectionPerfil() {
         <HStack
             as="section"
             bg={"#FFFFFF"}
-            width={"100%"}
-            height={"720px"}
-            // paddingX={20}
-            // paddingBottom={10}
+            width={"90%"}
+            minHeight={"620px"}
             marginBottom={10}
+            marginTop={"70px"}
             justifyContent={"center"}
-            alignItems={"center"}
-            paddingTop={"70px"}
+            alignItems={"flex-start"}
             borderRadius={10}
         >
-            <HStack
-                // bg={"blue"}
+            <Stack
                 height={"100%"}
                 width={"85%"}
-                justifyContent={"center"}
                 alignItems={"center"}
             >
-                {/* <ImageFooter src={"/logo_redonda.png"} alt={"Família Inu"} width={90} height={100} w="10%"/> */}
-                <TitleCard title={"Joãozinho da Silva"} size={"24px"} color="#CB4817"/>
-            </HStack>
+                <HStack
+                    width={"100%"}
+                    height={"80px"}
+                >
+                    <Button title={"Tutor"} href={"/"} w="50%"></Button>
+                    <Button title={"Pets"} href={"/"} w="50%"></Button>
+                </HStack>
+                <ViewTutor/>
+                {/* <ViewPet/> */}
+            </Stack>
             
         </HStack>
     )
