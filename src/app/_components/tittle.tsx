@@ -83,14 +83,15 @@ interface TitleCardProps {
     title: string
     size: string
     color?: string
+    weight ?: number
 }
 
-export function TitleCard({ title, size, color }:TitleCardProps) {
+export function TitleCard({ title, size, color, weight }:TitleCardProps) {
     return(
         <Heading
             as="h5"
             fontSize={size}
-            fontWeight={600}
+            fontWeight={weight}
             color={color}
         >
             {title}

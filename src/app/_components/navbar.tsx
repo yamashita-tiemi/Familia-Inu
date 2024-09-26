@@ -15,7 +15,7 @@ export function Navbar() {
             position={"fixed"}
             zIndex={99}
         >
-            <ImageNavbar src={"/logo.png"} alt={"Família Inu"} width={165} height={95}/>
+            <ImageNavbar src={"/logo.png"} alt={"Família Inu"} width={160} height={60}/>
             <Flex
                 gap={"5"}
             >
@@ -51,7 +51,7 @@ export function NavbarAdmin() {
             position={"fixed"}
             zIndex={99}
         >
-            <ImageNavbar src={"/logo.png"} alt={"Família Inu"} width={165} height={95}/>
+            <ImageNavbar src={"/logo.png"} alt={"Família Inu"} width={160} height={60}/>
             <Flex
                 gap={"10"}
             >

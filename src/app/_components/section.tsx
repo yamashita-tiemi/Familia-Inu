@@ -121,8 +121,8 @@ export function SectionAbout() {
                     alignItems={"center"}
                     paddingX={8}
                 >
-                    <TitleCard title={"Vitória Alexandre"} size={"32px"} color={""}/>
-                    <Text text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore "} size={"24px"} color={"#FFFFFF"} w={"100%"} />
+                    <TitleCard title={"Vitória Alexandre"} size={"30px"} color={"#CB4817"}/>
+                    <Text text={"Proprietária da família Inu, o Hotel Pet, possui treinamentos especializados para cuidar de pets de forma eficaz. Apaixonada por animais, ela oferece um ambiente acolhedor e seguro, onde os pets recebem atenção personalizada. Sua experiência garante que cada animal tenha a melhor vivência, proporcionando segurança e bem-estar. No Hotel Pet, Vitória une paixão e profissionalismo, comprometida em oferecer excelência no atendimento a pets e seus donos. "} size={"22px"} color={"#FFFFFF"} w={"100%"} weight={400}/>
                 </Stack>
                 <Stack
                     bg={"#F2933C"}
@@ -133,8 +133,8 @@ export function SectionAbout() {
                     alignItems={"center"}
                     paddingX={8}
                 >
-                    <TitleCard title={"Venha conhecer nosso trabalho!"} size={"28px"} color={"#FFFFFF"} />
-                    <TitleCard title={"Entre em contato conosco"} size={"32px"} color={"#FFFFFF"} />
+                    <TitleCard title={"Venha conhecer nosso trabalho!"} size={"30px"} color={"#CB4817"} />
+                    <TitleCard title={"Entre em contato conosco"} size={"32px"} color={"#FFFFFF"} weight={400}/>
                     <IconSocialCard />
                 </Stack>
             </HStack>
