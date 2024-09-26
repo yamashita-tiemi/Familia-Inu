@@ -10,12 +10,12 @@ interface Hospedagem {
   tutor: string;
 }
 
-interface HospedagemItemProps {
+interface CardHospedagemUserProps {
   hospedagem: Hospedagem;
   formatarData: (dataString: string) => string;
 }
 
-const HospedagemItem = ({ hospedagem, formatarData }: HospedagemItemProps) => {
+const CardHospedagemUser = ({ hospedagem, formatarData }: CardHospedagemUserProps) => {
   return (
     <Box 
       key={hospedagem.id} 
@@ -34,9 +34,9 @@ const HospedagemItem = ({ hospedagem, formatarData }: HospedagemItemProps) => {
       <Text color="#6C722B">Tutor: {hospedagem.tutor}</Text>
       <Text color="#6C722B">Pet: {hospedagem.pet}</Text>
       <Text color="#F2933C">Status: {hospedagem.status}</Text>
-      <Button colorScheme="teal" bg="#CB4817" _hover={{ bg: '#F2933C' }}>Detalhes</Button>
+      <Button colorScheme="teal" bg="#CB4817" _hover={{ bg: '#F2933C' }}>Cancelar</Button>
     </Box>
   );
 };
 
-export default HospedagemItem;
+export default CardHospedagemUser;

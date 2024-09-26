@@ -1,12 +1,10 @@
 'use client';
 
-import { Box, Heading, Stack, Button, Flex } from '@chakra-ui/react';
-import { Navbar, NavbarAdmin } from '../_components/navbar';
+import { Box, Heading, Stack } from '@chakra-ui/react';
+import { NavbarAdmin } from '../_components/navbar';
 import Footer from '../_components/footer';
-import HospedagemItem from '../_components/HospedagemItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'; 
 import { useState } from 'react';
+import CardHospedagemAdmin from '../_components/CardHospedagemAdmin';
 
 interface Hospedagem {
   id: string;
@@ -16,10 +14,6 @@ interface Hospedagem {
   pet: string;  
   tutor: string; 
 }
-
-interface MinhasHospedagensProps {
-    hospedagens : Hospedagem[];
-  }
 
 const HospedagensAdmin = () => {
   const [hospedagens, setHospedagens] = useState<Hospedagem[]>([
@@ -60,7 +54,6 @@ const HospedagensAdmin = () => {
         hospedagem.id === id ? { ...hospedagem, status: 'Confirmada' } : hospedagem
       )
     );
-    // Aqui você pode adicionar a lógica para confirmar a hospedagem 
   };
 
   const recusarHospedagem = (id: string) => {
@@ -69,7 +62,6 @@ const HospedagensAdmin = () => {
         hospedagem.id === id ? { ...hospedagem, status: 'Recusada' } : hospedagem
       )
     );
-    // Aqui você pode adicionar a lógica para recusar a hospedagem 
   };
 
   return (
@@ -87,30 +79,13 @@ const HospedagensAdmin = () => {
         <Heading mb={6} color="#CB4817">Todas as Hospedagens</Heading>
         <Stack spacing={4} width="100%">
           {hospedagens.map((hospedagem) => (
-            <Flex key={hospedagem.id} justifyContent="space-between" alignItems="center">
-              <HospedagemItem 
-                hospedagem={hospedagem} 
-                formatarData={formatarData}
-              />
-              <Flex>
-                <Button 
-                  colorScheme="green" 
-                  onClick={() => confirmarHospedagem(hospedagem.id)} 
-                  variant="ghost"
-                  aria-label="Confirmar"
-                >
-                  <FontAwesomeIcon icon={faCheckCircle} color="#6C722B" size="xl" />
-                </Button>
-                <Button 
-                  colorScheme="red" 
-                  onClick={() => recusarHospedagem(hospedagem.id)} 
-                  variant="ghost"
-                  aria-label="Recusar"
-                >
-                  <FontAwesomeIcon icon={faTimesCircle} color="#F2933C" size="xl" />
-                </Button>
-              </Flex>
-            </Flex>
+            <CardHospedagemAdmin
+              key={hospedagem.id}
+              hospedagem={hospedagem} 
+              formatarData={formatarData}
+              confirmarHospedagem={confirmarHospedagem}
+              recusarHospedagem={recusarHospedagem}
+            />
           ))}
         </Stack>
       </Box>

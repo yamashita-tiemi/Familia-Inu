@@ -3,7 +3,7 @@
 import { Box, Heading, Stack } from '@chakra-ui/react';
 import { Navbar, NavbarAdmin } from '../_components/navbar';
 import Footer from '../_components/footer';
-import HospedagemItem from '../_components/HospedagemItem';
+import CardHospedagemUser from '../_components/CardHospedagemUser';
 
 interface Hospedagem {
   id: string;
@@ -68,7 +68,7 @@ const MinhasHospedagens = ({ hospedagens = [] }: MinhasHospedagensProps) => {
         <Heading mb={6} color="#CB4817">Minhas Hospedagens</Heading>
         <Stack spacing={4} width="100%">
           {hospedagensComPlaceholder.map((hospedagem) => (
-            <HospedagemItem 
+            <CardHospedagemUser 
               key={hospedagem.id} 
               hospedagem={hospedagem} 
               formatarData={formatarData} // Passando a função como prop
