@@ -95,3 +95,33 @@ export function ImageDaily({ src, alt, width, height, align, w, py, mx }: ImageD
         </Stack>
     )
 }
+
+interface IconProps {
+    width: string
+    colorBg: string
+    color: string
+    children?:any
+    margin?: any
+    marginBottom?: any
+    href?: string
+}
+
+export function Icon({ width, colorBg, color, children, margin, marginBottom, href }:IconProps) {
+    return (
+            <Link as={NextLink} href={href}>
+                <Stack
+                    color={color}
+                    bg={colorBg}
+                    borderRadius={"50%"}
+                    width={width}
+                    height={width}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    margin={margin}
+                    marginBottom={marginBottom}
+                >
+                    {children}
+                </Stack>
+            </Link>
+    )
+}

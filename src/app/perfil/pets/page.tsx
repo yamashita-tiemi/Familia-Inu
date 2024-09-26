@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, FormControl, FormLabel, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, useDisclosure, useToast } from "@chakra-ui/react"
+import { Box, Button, FormControl, FormLabel, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure, useToast } from "@chakra-ui/react"
 import Footer from "@/app/_components/footer"
 import { NavbarAdmin } from "@/app/_components/navbar"
 import { SectionPerfil } from "../../_components/section"
@@ -11,11 +11,16 @@ import { TitleButton, TitleSection } from "@/app/_components/tittle";
 import { ButtonTutorPet } from "@/app/_components/button";
 import { Label } from "@/app/_components/label";
 import { cadastroPet, getPetsCliente } from "../perfil-service";
+import { Icon } from "@/app/_components/image";
+import { BiSolidPencil } from "react-icons/bi";
+import { FaTrash } from "react-icons/fa";
+import { AiFillPlusCircle } from 'react-icons/ai'
 
 
 export default function Perfil() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpenEdit, onOpen: onOpenEdit, onClose: onCloseEdit } = useDisclosure()
+    const { isOpen: isOpenDelete, onOpen: onOpenDelete, onClose: onCloseDelete } = useDisclosure()
 
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
@@ -43,7 +48,7 @@ export default function Perfil() {
     }
 
 
-    async function carregarPets(){
+    async function carregarPets() {
         console.log("asdfsd")
         console.log(await getPetsCliente());
     }
@@ -84,87 +89,115 @@ export default function Perfil() {
                 {/* <SectionPerfil/> */}
                 <HStack
                     as="section"
-                    bg={"#FFFFFF"}
-                    width={"90%"}
+                    // bg={"#FFFFFF"}
+                    width={"95%"}
                     minHeight={"620px"}
                     marginBottom={10}
                     marginTop={"70px"}
                     justifyContent={"center"}
                     alignItems={"flex-start"}
                     borderRadius={10}
+                    bg={"#d0d599"}
                 >
-                    {/* for para mais de uma pet */}
-                    <Stack
-                        height={"100%"}
-                        width={"85%"}
-                        alignItems={"center"}
-                    >
+                    <Stack width={"100%"} alignItems={"center"}>
                         <HStack
-                            width={"100%"}
+                            width={"98%"}
                             height={"80px"}
+                            marginBottom={10}
                         >
                             <ButtonTutorPet title={"Tutor"} href={"/perfil/tutor"} w="50%" bg={"#FFFFFF"} color={"#CB4817"}></ButtonTutorPet>
                             <ButtonTutorPet title={"Pets"} href={"/perfil/pets"} w="50%" bg={"#CB4817"} color={"#FFFFFF"}></ButtonTutorPet>
                         </HStack>
-                        {/* <ViewPet /> */}
-                        <Stack
-                            width={"60%"}
-                            alignItems={"center"}
-                            marginTop={16}
-                        >
-                            <Stack
-                                width={"100%"}
+                        <Stack width={"95%"} justifyContent={"flex-end"}>
+                            <Button
+                                bg={"#CB4817"}
+                                _hover={{ bg: "#F2933C" }}
+                                // minWidth={"100px"}
+                                onClick={onOpen}
+                                width={"10%"}
                             >
-                                <TitleSection title={"Nome"} size={"32px"} />
-                                <Label text={"Raça"} content={"teste"} />
-                                <Label text={"Sexo"} content={"teste"} />
-                                <Label text={"Porte"} content={"teste"} />
-                                <Label text={"Observacões"} content={"teste"} />
-                            </Stack>
-                            <HStack
-                                width={"100%"}
-                                justifyContent={"space-between"}
-                                marginTop={5}
-                            >
-                                <Button
-                                    bg={"#CB4817"}
-                                    _hover={{ bg: "#F2933C" }}
-                                    minWidth={"100px"}
-                                    onClick={onOpen}
+                                <Box
+                                    borderRadius={"16px"}
+                                    color='#FFFFFF'
+                                    width={"100%"}
                                 >
-                                    <Box
-                                        borderRadius={"16px"}
-                                        color='offWhite'
-                                        width={"100%"}
-                                    >
-                                        <HStack justifyContent={"center"}>
-                                            <TitleButton title={"Novo pet"} size={"16px"} />
-                                        </HStack>
-                                    </Box>
-                                </Button>
-                                <Button
-                                    bg={"#CB4817"}
-                                    _hover={{ bg: "#F2933C" }}
-                                    minWidth={"100px"}
-                                    onClick={onOpenEdit}
-                                >
-                                    <Box
-                                        borderRadius={"16px"}
-                                        color='offWhite'
-                                        width={"100%"}
-                                    >
-                                        <HStack justifyContent={"center"}>
-                                            <TitleButton title={"Editar"} size={"16px"} />
-                                        </HStack>
-                                    </Box>
-                                </Button>
-                            </HStack>
+                                    <HStack justifyContent={"center"}>
+                                        {/* <AiFillPlusCircle width={"40px"} /> */}
+                                        <Icon width={"60%"} colorBg={"none"} color={"#FFFFFF"} href={""}>
+                                            <AiFillPlusCircle size={24} />
+                                        </Icon>
+                                        <TitleButton title={"Novo pet"} size={"16px"} />
+                                    </HStack>
+                                </Box>
+                            </Button>
                         </Stack>
+                        <TableContainer
+                            bg={"#FFFFFF"}
+                            width={"95%"}
+                        >
+                            <Table variant='striped' color="#FFFFFF">
+                                <Thead bg={"#6C722B"}>
+                                    <Tr>
+                                        <Th color={"#FFFFFF"} fontSize={"18px"} width={"18%"} textAlign={"center"}>Nome</Th>
+                                        <Th color={"#FFFFFF"} fontSize={"18px"} width={"16%"} textAlign={"center"}>Raça</Th>
+                                        <Th color={"#FFFFFF"} fontSize={"18px"} width={"16%"} textAlign={"center"}>Porte</Th>
+                                        <Th color={"#FFFFFF"} fontSize={"18px"} width={"10%"} textAlign={"center"}>Sexo</Th>
+                                        <Th color={"#FFFFFF"} fontSize={"18px"} width={"18%"} textAlign={"center"}>Observações</Th>
+                                        <Th color={"#FFFFFF"} fontSize={"18px"} width={"28%"} textAlign={"center"}></Th>
+                                    </Tr>
+                                </Thead>
+                                <Tbody overflow={"scroll"}>
+                                    <Tr>
+                                        <Td textAlign={"center"}>{nome}</Td>
+                                        <Td textAlign={"center"}>{raca}</Td>
+                                        <Td textAlign={"center"}>{porte}</Td>
+                                        <Td textAlign={"center"}>{sexo}</Td>
+                                        <Td textAlign={"center"}>{observacao}</Td>
+                                        <Td textAlign={"center"}>
+                                            <HStack justifyContent={"center"}>
+                                                {/* faezr uma funcao pra pegar o id de qual pet escolhido e chamar depois abrir o modal */}
+                                                <Button onClick={onOpenEdit} bg={"none"}>
+                                                    <Icon width={"40px"} colorBg={"#ffa133"} color={"#FFFFFF"} href={""}>
+                                                        <BiSolidPencil size={28} />
+                                                    </Icon>
+                                                </Button>
+                                                <Button onClick={onOpenDelete} bg={"none"}>
+                                                    <Icon width={"40px"} colorBg={"#D00"} color={"#FFFFFF"} href={""}>
+                                                        <FaTrash size={20} />
+                                                    </Icon>
+                                                </Button>
+                                            </HStack>
+                                        </Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td textAlign={"center"}>{nome}</Td>
+                                        <Td textAlign={"center"}>{raca}</Td>
+                                        <Td textAlign={"center"}>{porte}</Td>
+                                        <Td textAlign={"center"}>{sexo}</Td>
+                                        <Td textAlign={"center"}>{observacao}</Td>
+                                        <Td textAlign={"center"}>
+                                            <HStack justifyContent={"center"}>
+                                                <Button onClick={function () { }} bg={"none"}>
+                                                    <Icon width={"40px"} colorBg={"#ffa133"} color={"#FFFFFF"} href={""}>
+                                                        <BiSolidPencil size={28} />
+                                                    </Icon>
+                                                </Button>
+                                                <Button onClick={function () { }} bg={"none"}>
+                                                    <Icon width={"40px"} colorBg={"#D00"} color={"#FFFFFF"} href={""}>
+                                                        <FaTrash size={20} />
+                                                    </Icon>
+                                                </Button>
+                                            </HStack>
+                                        </Td>
+                                    </Tr>
+                                </Tbody>
+                            </Table>
+                        </TableContainer>
                     </Stack>
 
                 </HStack>
 
-    {/* ------------------modal-------------- */}
+                {/* ------------------modal-------------- */}
                 <Modal
                     initialFocusRef={initialRef}
                     finalFocusRef={finalRef}
@@ -264,7 +297,7 @@ export default function Perfil() {
                     </ModalContent>
                 </Modal >
 
-    {/* ------------------modal editar-------------- */}
+                {/* ------------------modal editar-------------- */}
                 <Modal
                     initialFocusRef={initialRef}
                     finalFocusRef={finalRef}
@@ -364,6 +397,32 @@ export default function Perfil() {
                         </ModalBody>
                     </ModalContent>
                 </Modal >
+                {/* -------------- modal delete ------------------ */}
+                <Modal isOpen={isOpenDelete} onClose={onCloseDelete} isCentered>
+                    <ModalOverlay />
+                    <ModalContent>
+                        <ModalCloseButton />
+                        <ModalBody pb={12} pt={16} bg="#6C722B">
+                            <Heading
+                                as="p"
+                                fontSize={"24px"}
+                                fontWeight={400}
+                                color={"#FFFFFF"}
+                                w={"90%"}
+                            >
+                                {"Tem certeza que deseja excluir?"}
+                            </Heading>
+                        </ModalBody>
+                        <ModalFooter bg="#6C722B">
+                            <Button colorScheme='gray' mr={3}>
+                                Cancelar
+                            </Button>
+                            <Button colorScheme='red' mr={3}>
+                                Excluir
+                            </Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
             </Stack >
 
             <Footer />

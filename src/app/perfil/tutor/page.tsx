@@ -72,8 +72,9 @@ export default function Perfil() {
                 {/* <SectionPerfil/> */}
                 <HStack
                     as="section"
-                    bg={"#FFFFFF"}
-                    width={"90%"}
+                    // bg={"#FFFFFF"}
+                    bg={"#d0d599"}
+                    width={"95%"}
                     minHeight={"620px"}
                     marginBottom={10}
                     marginTop={"70px"}
@@ -83,11 +84,11 @@ export default function Perfil() {
                 >
                     <Stack
                         height={"100%"}
-                        width={"85%"}
+                        width={"100%"}
                         alignItems={"center"}
                     >
                         <HStack
-                            width={"100%"}
+                            width={"98%"}
                             height={"80px"}
                         >
                             <ButtonTutorPet title={"Tutor"} href={"/perfil/tutor"} w="50%" bg={"#CB4817"} color={"#FFFFFF"}></ButtonTutorPet>
@@ -100,7 +101,7 @@ export default function Perfil() {
                             alignItems={"center"}
                             marginTop={16}
                         >
-                            <TitleSection title={"Nome"} size={"32px"} />
+                            <TitleSection title={nome} size={"32px"} />
                             <Stack
                                 width={"100%"}
                             >

@@ -13,6 +13,7 @@ export function Label({ text, content }:LabelProps) {
             border={"1px solid #CB4817"}
             borderRadius={"10px"}
             width={"100%"}
+            bg={"#ffffffbd"}
         >
             <Heading
                 fontSize={"20px"}
