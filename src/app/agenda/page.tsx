@@ -8,7 +8,7 @@ import { Navbar } from '../_components/navbar';
 import AppointmentForm from '../_components/AppointmentForm';
 import CalendarComponent from '../_components/CalendarComponent';
 import Footer from '../_components/footer';
-import { validateUser } from '../service/user-auth-service';
+import { validateAdmin, validateUser } from '../service/user-auth-service';
 
 const AgendaPage = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
@@ -28,14 +28,8 @@ const AgendaPage = () => {
   };
 
   async function verificaTokenUsuario(){
-    const token = localStorage.getItem("TOKEN");
-    if(!token){
-      alert("Token da sessão expirou. Faça login novamente.");
-      window.location.href = '/login';
-    }
-
     try {
-      await validateUser();
+      const res = await validateUser();
     } catch (error) {
       console.error(error);
       alert("Token da sessão expirou. Faça login novamente.");

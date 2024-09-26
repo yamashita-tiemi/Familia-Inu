@@ -2,7 +2,7 @@
 
 import { Box, Button, FormControl, FormLabel, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, useDisclosure } from "@chakra-ui/react"
 import Footer from "@/app/_components/footer"
-import { NavbarAdmin } from "@/app/_components/navbar"
+import { Navbar, NavbarAdmin } from "@/app/_components/navbar"
 import { SectionPerfil } from "../../_components/section"
 import { ViewTutor } from "@/app/_components/view"
 import { TitleSection, TitleButton } from "@/app/_components/tittle"
@@ -30,7 +30,6 @@ export default function Perfil() {
 
     async function carregarPerfil() {
         const perfil = await getPerfil();
-        console.log(perfil);
         if(perfil){
             setNome(perfil.data.name);
             setEmail(perfil.data.email);
@@ -63,7 +62,7 @@ export default function Perfil() {
     }
     return (
         <>
-            <NavbarAdmin />
+            <Navbar />
 
             <Stack
                 width={"100%"}

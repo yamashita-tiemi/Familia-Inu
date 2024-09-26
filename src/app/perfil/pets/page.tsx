@@ -2,7 +2,7 @@
 
 import { Box, Button, FormControl, FormLabel, Heading, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useDisclosure, useToast } from "@chakra-ui/react"
 import Footer from "@/app/_components/footer"
-import { NavbarAdmin } from "@/app/_components/navbar"
+import { Navbar, NavbarAdmin } from "@/app/_components/navbar"
 import { SectionPerfil } from "../../_components/section"
 import { ViewPet, ViewTutor } from "@/app/_components/view"
 // import { cadastro } from "@/app/cadastro/cadastro-service"
@@ -86,7 +86,6 @@ export default function Perfil() {
             };
 
             let res = await cadastroPet(pet); // Se houver uma função de cadastro
-            console.log("Pet registrado:", pet, res);
             showToast("Pet registrado com sucesso", "success");
 
             // Limpar os campos após o registro
@@ -102,7 +101,7 @@ export default function Perfil() {
     };
     return (
         <>
-            <NavbarAdmin />
+            <Navbar />
 
             <Stack
                 width={"100%"}

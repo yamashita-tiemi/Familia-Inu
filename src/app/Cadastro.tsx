@@ -40,8 +40,6 @@ const Cadastro = () => {
 
   const enviarFormulario = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Tutor:', tutor);
-    console.log('Pet:', pet);
     // envio
   };
 
