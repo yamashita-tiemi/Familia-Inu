@@ -35,7 +35,6 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, t
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted');
   };
 
   return (

@@ -28,15 +28,8 @@ const AgendaPage = () => {
   };
 
   async function verificaTokenUsuario(){
-    const token = localStorage.getItem("TOKEN");
-    if(!token){
-      alert("Token da sessão expirou. Faça login novamente.");
-      window.location.href = '/login';
-    }
-
     try {
       const res = await validateUser();
-      console.log("RESPONSE USER:", res)
     } catch (error) {
       console.error(error);
       alert("Token da sessão expirou. Faça login novamente.");
