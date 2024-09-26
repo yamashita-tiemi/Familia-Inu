@@ -5,7 +5,7 @@ export async function login(data: any) {
     try {
         let res = await api.post('/login',data);
         localStorage.setItem('TOKEN', res.data.token);
-        window.location.href = '/perfil';
+        window.location.href = '/perfil/tutor';
 
     } catch (error) {
         console.error(error);

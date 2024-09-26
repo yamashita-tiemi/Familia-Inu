@@ -27,7 +27,7 @@ export function ArticleIndexPrimary({ text1, text2, text3 }: ArticleIndexPrimary
                 <TextIndex text={text2} size={"20px"} color={"#FFFFFF"} />
                 <TextIndex text={text3} size={"20px"} color={"#FFFFFF"} />
             </Stack>
-            <Button title={"Agende aqui"} href={"/agenda"} w="30%"></Button>
+            <Button title={"Agende aqui"} href={"/login"} w="30%"></Button>
         </Stack>
     )
 }
@@ -56,7 +56,7 @@ export function ArticleDaily({ src, alt, widthImg, heightImg, text }:ArticleDail
                 top={"-10px"}
                 borderRadius={"0 0 16px 16px"}
             >
-                <Text weight={400} text={text} size={"18px"} color={"#FFFF"} paddingX={2} align="justify"/>
+                <Text weight={400} text={text} size={"18px"} color={"#FFFF"} paddingX={2} paddingY={2} align="justify"/>
             </Stack>
         </Stack>
     )

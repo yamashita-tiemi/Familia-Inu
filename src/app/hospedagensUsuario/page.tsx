@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Heading, Stack } from '@chakra-ui/react';
-import { Navbar } from '../_components/navbar';
+import { Navbar, NavbarAdmin } from '../_components/navbar';
 import Footer from '../_components/footer';
 import HospedagemItem from '../_components/HospedagemItem';
 
@@ -55,7 +55,7 @@ const MinhasHospedagens = ({ hospedagens = [] }: MinhasHospedagensProps) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarAdmin />
       <Box 
         bg="#d7dca1" 
         minHeight="100vh" 
