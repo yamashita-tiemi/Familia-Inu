@@ -23,11 +23,7 @@ export default function LoginForm() {
             email, 
             password: senha
         }
-
-
         await login(userData);
-
-        console.log(userData)
     } 
     
     return (

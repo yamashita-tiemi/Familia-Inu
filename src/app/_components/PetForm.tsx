@@ -25,7 +25,6 @@ export const PetForm = () => {
       };
 
       await cadastro(pet); // Se houver uma função de cadastro
-      console.log("Pet registrado:", pet);
 
       // Limpar os campos após o registro
       setNome('');
