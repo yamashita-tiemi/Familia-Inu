@@ -8,7 +8,8 @@ import { ViewTutor } from "@/app/_components/view"
 import { TitleSection, TitleButton } from "@/app/_components/tittle"
 import { Label } from "@/app/_components/label"
 import { ButtonTutorPet } from "@/app/_components/button"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import { editarPerfil, getPerfil } from "../perfil-service";
 
 
 export default function Perfil() {
@@ -22,16 +23,33 @@ export default function Perfil() {
     const [telefone, setTelefone] = useState('');
     const [endereco, setEndereco] = useState('');
 
+    useEffect(() => {
+        carregarPerfil()
+    }, []);
+
+
+    async function carregarPerfil() {
+        const perfil = await getPerfil();
+        console.log(perfil);
+        if(perfil){
+            setNome(perfil.data.name);
+            setEmail(perfil.data.email);
+            setTelefone(perfil.data.number);
+
+            //Precisa de uma solucao melhor
+            localStorage.setItem("USERID", perfil.data.id);
+        }
+    }
+    
     const registrarTutor = async () => {
         try {
             const tutor = {
-                nome,
+                name: nome,
                 email,
-                telefone,
-                endereco,
+                number: telefone,
             };
 
-            // await cadastro(pet); // Se houver uma função de cadastro
+            console.log(await editarPerfil(tutor)); // Se houver uma função de cadastro
             console.log("Registro sucesso:", tutor);
 
             // Limpar os campos após o registro
@@ -86,10 +104,10 @@ export default function Perfil() {
                             <Stack
                                 width={"100%"}
                             >
-                                <Label text={"Nome"} content={"teste"} />
-                                <Label text={"Email"} content={"teste"} />
-                                <Label text={"Telefone"} content={"teste"} />
-                                <Label text={"Endereço"} content={"teste"} />
+                                <Label text={"Nome"} content={nome} />
+                                <Label text={"Email"} content={email} />
+                                <Label text={"Telefone"} content={telefone} />
+                                {/*<Label text={"Endereço"} content={"teste"} />*/}
                             </Stack>
                             <Stack
                                 width={"100%"}
@@ -167,20 +185,7 @@ export default function Perfil() {
                                     _placeholder={{ color: '#A6AE4F' }}
                                     _focus={{ borderColor: "#CB4817" }}
                                     placeholder='Telefone'
-                                />
-                                <FormLabel color="#FFFFFF" marginY={2}>Endereco:</FormLabel>
-                                <Input
-                                    name="endereco"
-                                    value={endereco}
-                                    onChange={(event) => setEndereco(event.target.value)}
-                                    bg="#FBF2EC"
-                                    borderColor="#A6AE4F"
-                                    _placeholder={{ color: '#A6AE4F' }}
-                                    _focus={{ borderColor: "#CB4817" }}
-                                    // height="100px"
-                                    // as="textarea"
-                                    placeholder='Endereco'
-                                />
+                                />                            
                                 <Button
                                     margin="0 auto"
                                     bg="#CB4817"

@@ -6,10 +6,11 @@ import { NavbarAdmin } from "@/app/_components/navbar"
 import { SectionPerfil } from "../../_components/section"
 import { ViewPet, ViewTutor } from "@/app/_components/view"
 // import { cadastro } from "@/app/cadastro/cadastro-service"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { TitleButton, TitleSection } from "@/app/_components/tittle";
 import { ButtonTutorPet } from "@/app/_components/button";
 import { Label } from "@/app/_components/label";
+import { getPetsCliente } from "../perfil-service";
 
 
 export default function Perfil() {
@@ -24,6 +25,16 @@ export default function Perfil() {
     const [porte, setPorte] = useState('');
     const [cor, setCor] = useState('');
     const [observacao, setObservacao] = useState('');
+
+    useEffect(() => {
+        carregarPets()
+    }, []);
+
+
+    async function carregarPets(){
+        console.log("asdfsd")
+        console.log(await getPetsCliente());
+    }
 
     const registrarPet = async () => {
         try {
