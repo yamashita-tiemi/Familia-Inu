@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, FormControl, FormLabel, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, FormControl, FormLabel, HStack, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, useDisclosure, useToast } from "@chakra-ui/react"
 import Footer from "@/app/_components/footer"
 import { NavbarAdmin } from "@/app/_components/navbar"
 import { SectionPerfil } from "../../_components/section"
@@ -30,6 +30,18 @@ export default function Perfil() {
         carregarPets()
     }, []);
 
+    const toast = useToast();
+
+    const showToast = (text: string, status: any) => {
+        toast({
+            position: "bottom",
+            title: text,
+            status: status,
+            duration: 5000,
+            isClosable: true,
+        })
+    }
+
 
     async function carregarPets(){
         console.log("asdfsd")
@@ -48,6 +60,7 @@ export default function Perfil() {
 
             let res = await cadastroPet(pet); // Se houver uma função de cadastro
             console.log("Pet registrado:", pet, res);
+            showToast("Pet registrado com sucesso", "success");
 
             // Limpar os campos após o registro
             setNome('');
@@ -57,6 +70,7 @@ export default function Perfil() {
             setObservacao('');
         } catch (error) {
             console.error("Erro ao registrar pet:", error);
+            showToast("Não foi possivel registrar pet", "error");
         }
     };
     return (
