@@ -1,9 +1,41 @@
+'use client';
+
 import { Flex, HStack, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { TitleNavbar } from "./tittle";
 import { ImageNavbar } from "./image";
+import { useEffect, useState } from "react";
+import { validateAdmin, validateUser } from "../service/user-auth-service";
 
 export function Navbar() {
+
+    const [role, setRole] = useState('');
+    const [autenticado, setAutenticado] = useState(false);
+
+
+    useEffect(() => {
+        async function verificaTokenUsuario(){
+            const token = localStorage.getItem("TOKEN");
+            if(!token){
+              alert("Token da sessão expirou. Faça login novamente.");
+              window.location.href = '/login';
+            }
+    
+            try {
+                const cliente = await validateUser();
+                console.log(cliente);
+                setRole("CLIENTE");
+                setAutenticado(true);
+                console.log(role)
+            } catch (error) {
+                alert("Necessita de autenticacao");
+
+            }
+        }
+
+        verificaTokenUsuario();
+    }, []); 
+
     return(
         <HStack 
             // as={"navbar"}
@@ -22,9 +54,9 @@ export function Navbar() {
                 <Link as={NextLink} href='/' color="#A6AE4F">
                     <TitleNavbar color="#F2933C" title={"Home"} size={"28px"} />
                 </Link>
-                <Link as={NextLink} href='/agenda' color="#A6AE4F">
+                {autenticado ? (<Link as={NextLink} href='/agenda' color="#A6AE4F">
                     <TitleNavbar color="#F2933C" title={"Agenda"} size={"28px"} />
-                </Link>
+                </Link>) : ''}
                 <Link as={NextLink} href='/sobre' color="#A6AE4F">
                     <TitleNavbar color="#F2933C" title={"Sobre"} size={"28px"} />
                 </Link>
