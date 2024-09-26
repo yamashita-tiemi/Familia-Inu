@@ -1,5 +1,3 @@
-// pages/agenda.tsx
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -13,7 +11,7 @@ import { validateUser } from '../service/user-auth-service';
 const AgendaPage = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
-  const [selectedPets, setSelectedPets] = useState<string[]>([]); // Pets selecionados
+  const [selectedPet, setSelectedPet] = useState<string>(''); // Alterado para um único pet selecionado
   
   // Simulação dos dados do usuário logado
   const tutorName = "João Silva"; // Nome do tutor logado
@@ -28,8 +26,8 @@ const AgendaPage = () => {
     setEndDate(end);
   };
 
-  const handlePetsChange = (selectedPets: string[]) => {
-    setSelectedPets(selectedPets); // Atualiza os pets selecionados
+  const handlePetChange = (pet: string) => {
+    setSelectedPet(pet); // Atualiza o pet selecionado
   };
 
   async function verificaTokenUsuario(){
@@ -78,10 +76,10 @@ const AgendaPage = () => {
               startDate={startDate}
               endDate={endDate}
               tutorName={tutorName}
-              selectedPets={selectedPets} // Passa os pets selecionados
+              selectedPet={selectedPet} // Passa o pet selecionado
               petOptions={petOptions} // Passando as opções de pets
               onDateChange={handleDateRangeChange}
-              onPetsChange={handlePetsChange} // Função para atualizar os pets
+              onPetChange={handlePetChange} // Função para atualizar o pet
             />
           </Box>
         </Flex>

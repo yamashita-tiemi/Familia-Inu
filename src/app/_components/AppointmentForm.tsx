@@ -1,20 +1,20 @@
-// components/AppointmentForm.tsx
+'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Stack, Input, Button, Text, Textarea, Box, Checkbox, CheckboxGroup } from '@chakra-ui/react';
+import { Stack, Input, Button, Text, Textarea, Box, Select } from '@chakra-ui/react';
 import moment from 'moment';
 
 interface AppointmentFormProps {
   startDate: Date | null;
   endDate: Date | null;
   tutorName: string;
-  selectedPets: string[]; // Pets selecionados
+  selectedPet: string; // Alterado para um único pet selecionado
   petOptions: string[]; // Opções de pets disponíveis
   onDateChange: (start: Date, end: Date) => void;
-  onPetsChange: (selectedPets: string[]) => void; // Função para atualizar os pets selecionados
+  onPetChange: (selectedPet: string) => void; // Função para atualizar o pet selecionado
 }
 
-const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, tutorName, selectedPets, petOptions, onDateChange, onPetsChange }) => {
+const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, tutorName, selectedPet, petOptions, onDateChange, onPetChange }) => {
   const [localStartDate, setLocalStartDate] = useState<string>(startDate ? startDate.toLocaleDateString('pt-BR') : '');
   const [localEndDate, setLocalEndDate] = useState<string>(endDate ? endDate.toLocaleDateString('pt-BR') : '');
 
@@ -56,13 +56,13 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ startDate, endDate, t
         <Input value={tutorName} readOnly placeholder="Nome do Tutor" />
 
         <Text fontWeight="bold">Nome do Pet</Text>
-        <CheckboxGroup value={selectedPets} onChange={onPetsChange}>
+        <Select value={selectedPet} onChange={(e) => onPetChange(e.target.value)} placeholder="Selecione um Pet">
           {petOptions.map((pet) => (
-            <Checkbox key={pet} value={pet}>
+            <option key={pet} value={pet}>
               {pet}
-            </Checkbox>
+            </option>
           ))}
-        </CheckboxGroup>
+        </Select>
 
         <Text fontWeight="bold">Data de Entrada</Text>
         <Input
