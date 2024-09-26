@@ -15,7 +15,7 @@ interface Hospedagem {
 }
 
 interface MinhasHospedagensProps {
-  hospedagens?: Hospedagem[];
+  hospedagens : Hospedagem[];
 }
 
 const MinhasHospedagens = ({ hospedagens = [] }: MinhasHospedagensProps) => {

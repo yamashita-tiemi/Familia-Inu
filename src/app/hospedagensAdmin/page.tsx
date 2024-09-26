@@ -17,6 +17,10 @@ interface Hospedagem {
   tutor: string; 
 }
 
+interface MinhasHospedagensProps {
+    hospedagens : Hospedagem[];
+  }
+
 const HospedagensAdmin = () => {
   const [hospedagens, setHospedagens] = useState<Hospedagem[]>([
     {
