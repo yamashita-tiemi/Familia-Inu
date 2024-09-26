@@ -11,7 +11,7 @@ export default function Footer() {
             bg={"#A6AE4F"}
             width={"100%"}
             height={"100px"}
-            justifyContent={"space-around"}
+            justifyContent={"space-evenly"}
             paddingX={10}
             marginTop={10}
         >
@@ -23,7 +23,7 @@ export default function Footer() {
                 <Text  align="justify" size={"16px"} color={"#FFFF"}
                 text={"© 2024 Familia Inu, todos os direitos reservados"} weight={300} />
             </Stack>
-            <IconSocial></IconSocial>
+            <IconSocial/>
         </HStack>
     )
 }

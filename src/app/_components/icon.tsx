@@ -17,13 +17,25 @@ export function IconCard({ opacity }: IconCardProps) {
 export function IconSocial() {
     return (
         <Stack width={"20%"}>
-            <Link as={NextLink} href={'https://web.whatsapp.com/'} isExternal={true}>
+            <Link 
+                as={NextLink} 
+                href={'https://web.whatsapp.com/'} 
+                isExternal={true} 
+                _hover={{ textDecoration: "none" }} // Remove underline and change color on hover
+            >
                 <HStack margin="0 auto">
-                    <TextIndex margin="0 auto" text={"(32) 9 XXXX-XXXX"} size={"16px"} color={"#FFFFFF"} />
+                    <FaWhatsapp size={"24px"} color={"#FFFFFF"} /> {/* Ícone do WhatsApp */}
+                    <TextIndex margin="0 auto" text={"(32) 9 9988-7766"} size={"16px"} color={"#FFFFFF"} />
                 </HStack>
             </Link>
-            <Link as={NextLink} href={'https://www.instagram.com/'} isExternal={true}>
+            <Link 
+                as={NextLink} 
+                href={'https://www.instagram.com/'} 
+                isExternal={true} 
+                _hover={{ textDecoration: "none"}} // Remove underline and change color on hover
+            >
                 <HStack>
+                    <FaInstagram size={"24px"} color={"#FFFFFF"} /> {/* Ícone do Instagram */}
                     <TextIndex margin="0 auto" text={"@familia_inu"} size={"16px"} color={"#FFFFFF"} />
                 </HStack>
             </Link>
