@@ -53,3 +53,18 @@ export async function getPetsCliente() {
     }
 
 }
+
+export async function cadastroPet(pet: any) {
+    const token = localStorage.getItem('TOKEN');
+    try {
+        return await api.post('/pet', pet, {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        alert("ERRO AO ACESSAR PETS DO CLIENTE");
+    }
+
+}

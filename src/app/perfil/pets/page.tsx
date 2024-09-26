@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react"
 import { TitleButton, TitleSection } from "@/app/_components/tittle";
 import { ButtonTutorPet } from "@/app/_components/button";
 import { Label } from "@/app/_components/label";
-import { getPetsCliente } from "../perfil-service";
+import { cadastroPet, getPetsCliente } from "../perfil-service";
 
 
 export default function Perfil() {
@@ -23,7 +23,7 @@ export default function Perfil() {
     const [nome, setNome] = useState('');
     const [raca, setRaca] = useState('');
     const [porte, setPorte] = useState('');
-    const [cor, setCor] = useState('');
+    const [sexo, setSexo] = useState('');
     const [observacao, setObservacao] = useState('');
 
     useEffect(() => {
@@ -39,21 +39,21 @@ export default function Perfil() {
     const registrarPet = async () => {
         try {
             const pet = {
-                nome,
-                raca,
-                porte,
-                cor,
-                observacao
+                name: nome,
+                breed: raca,
+                type: porte,
+                sex: sexo,
+                comment: observacao
             };
 
-            // await cadastro(pet); // Se houver uma função de cadastro
-            console.log("Pet registrado:", pet);
+            let res = await cadastroPet(pet); // Se houver uma função de cadastro
+            console.log("Pet registrado:", pet, res);
 
             // Limpar os campos após o registro
             setNome('');
             setRaca('');
             setPorte('');
-            setCor('');
+            setSexo('');
             setObservacao('');
         } catch (error) {
             console.error("Erro ao registrar pet:", error);
@@ -103,7 +103,7 @@ export default function Perfil() {
                             >
                                 <TitleSection title={"Nome"} size={"32px"} />
                                 <Label text={"Raça"} content={"teste"} />
-                                <Label text={"Cor"} content={"teste"} />
+                                <Label text={"Sexo"} content={"teste"} />
                                 <Label text={"Porte"} content={"teste"} />
                                 <Label text={"Observacões"} content={"teste"} />
                             </Stack>
@@ -205,16 +205,16 @@ export default function Perfil() {
                                     />
                                 </FormControl>
                                 <FormControl>
-                                    <FormLabel color="#FFFFFF">Cor:</FormLabel>
+                                    <FormLabel color="#FFFFFF">Sexo:</FormLabel>
                                     <Input
-                                        name="cor"
-                                        value={cor}
-                                        onChange={(event) => setCor(event.target.value)}
+                                        name="sexo"
+                                        value={sexo}
+                                        onChange={(event) => setSexo(event.target.value)}
                                         bg="#FBF2EC"
                                         borderColor="#A6AE4F"
                                         _placeholder={{ color: '#A6AE4F' }}
                                         _focus={{ borderColor: "#CB4817" }}
-                                        placeholder='Cor'
+                                        placeholder='sexo'
                                     />
                                 </FormControl>
                             </HStack>
@@ -305,16 +305,16 @@ export default function Perfil() {
                                     />
                                 </FormControl>
                                 <FormControl>
-                                    <FormLabel color="#FFFFFF">Cor:</FormLabel>
+                                    <FormLabel color="#FFFFFF">Sexo:</FormLabel>
                                     <Input
-                                        name="cor"
-                                        value={cor}
-                                        onChange={(event) => setCor(event.target.value)}
+                                        name="sexo"
+                                        value={sexo}
+                                        onChange={(event) => setSexo(event.target.value)}
                                         bg="#FBF2EC"
                                         borderColor="#A6AE4F"
                                         _placeholder={{ color: '#A6AE4F' }}
                                         _focus={{ borderColor: "#CB4817" }}
-                                        placeholder='Cor'
+                                        placeholder='sexo'
                                     />
                                 </FormControl>
                             </HStack>
