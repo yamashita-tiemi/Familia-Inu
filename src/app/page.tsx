@@ -16,7 +16,6 @@ export default function Home() {
     <>
       <Navbar/>
       <SectionIndexPrimary/>
-      {/* <SectionIndexReview/> */}
       <SectionIndexDaily/>
       <Footer/>
     </>

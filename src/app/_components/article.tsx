@@ -40,18 +40,24 @@ interface ArticleDailyProps {
     text: string
 }
 
-export function ArticleDaily({ src, alt, widthImg, heightImg, text }:ArticleDailyProps) {
+export function ArticleDaily({ src, alt, widthImg, heightImg, text }: ArticleDailyProps) {
     return (
         <Stack
             paddingTop={10}
-            width={"70%"}
+            width={"100%"} // Altera para 100% para melhor responsividade
             borderRadius={"16px"}
         >
-            <ImageDaily src={src} alt={alt} width={widthImg} height={heightImg} w="100%"/>
+            <ImageDaily 
+                src={src} 
+                alt={alt} 
+                width={widthImg} 
+                height={heightImg} 
+                w="100%" // Define largura como 100%
+            />
             <Stack
                 bg={"#CB4817"}
                 width={"100%"}
-                height={"80px"}
+                height={"100%"}
                 position={"relative"}
                 top={"-10px"}
                 borderRadius={"0 0 16px 16px"}

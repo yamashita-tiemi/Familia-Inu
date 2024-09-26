@@ -43,15 +43,17 @@ export function TitlePage ({ title, size, color }:TitlePageProps) {
 interface TitleSectionProps {
     title: string
     size: string
+    p ?: string
 }
 
-export function TitleSection ({ title, size }:TitleSectionProps) {
+export function TitleSection ({ title, size, p }:TitleSectionProps) {
     return(
         <Heading
             as="h3"
             fontSize={size}
             fontWeight={800}
             color={"#CB4817"}
+            padding={p}
         >
             {title}
         </Heading>

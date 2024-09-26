@@ -88,10 +88,17 @@ export function ImageDaily({ src, alt, width, height, align, w, py, mx }: ImageD
             minWidth={"80px"}
             paddingY={py}
             marginX={mx}
-            borderRadius={"16px"} //nao esta funcionando
+            borderRadius={"16px"}
             alignItems={"center"}
         >
-            <NextImage src={src} alt={alt} width={width} height={height} />
+            <NextImage 
+                src={src} 
+                alt={alt} 
+                width={width} 
+                height={height} 
+                layout="responsive" // Torna a imagem responsiva
+                objectFit="cover" // Ajusta o recorte da imagem
+            />
         </Stack>
     )
 }
