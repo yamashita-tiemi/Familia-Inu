@@ -13,6 +13,7 @@ import { validateUser } from '../service/user-auth-service';
 const AgendaPage = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+  const [selectedPets, setSelectedPets] = useState<string[]>([]); // Pets selecionados
   
   // Simulação dos dados do usuário logado
   const tutorName = "João Silva"; // Nome do tutor logado
@@ -25,6 +26,10 @@ const AgendaPage = () => {
   const handleDateRangeChange = (start: Date | null, end: Date | null) => {
     setStartDate(start);
     setEndDate(end);
+  };
+
+  const handlePetsChange = (selectedPets: string[]) => {
+    setSelectedPets(selectedPets); // Atualiza os pets selecionados
   };
 
   async function verificaTokenUsuario(){
@@ -73,9 +78,10 @@ const AgendaPage = () => {
               startDate={startDate}
               endDate={endDate}
               tutorName={tutorName}
-              petName="" // Inicialmente vazio ou pode ser preenchido com uma opção padrão
+              selectedPets={selectedPets} // Passa os pets selecionados
               petOptions={petOptions} // Passando as opções de pets
               onDateChange={handleDateRangeChange}
+              onPetsChange={handlePetsChange} // Função para atualizar os pets
             />
           </Box>
         </Flex>
