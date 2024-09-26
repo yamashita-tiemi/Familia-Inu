@@ -16,6 +16,18 @@ import { BiSolidPencil } from "react-icons/bi";
 import { FaTrash } from "react-icons/fa";
 import { AiFillPlusCircle } from 'react-icons/ai'
 
+type Pet = {
+    birthDate: Date,
+    breed: string,
+    comment: string,
+    createdAt: Date,
+    id: number,
+    name: string,
+    sex: string,
+    type: string,
+    userId: number
+}
+
 
 export default function Perfil() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -30,6 +42,8 @@ export default function Perfil() {
     const [porte, setPorte] = useState('');
     const [sexo, setSexo] = useState('');
     const [observacao, setObservacao] = useState('');
+
+    const [pets, setPets] = useState<Pet[]>([]);
 
     useEffect(() => {
         carregarPets()
@@ -50,7 +64,15 @@ export default function Perfil() {
 
     async function carregarPets() {
         console.log("asdfsd")
-        console.log(await getPetsCliente());
+        const data: any = await getPetsCliente();
+        if (!data) {
+            setPets([]);
+        }
+        else {
+            setPets(data.data);
+            console.log(data.data);
+            console.log(data.data[0].name);
+        }
     }
 
     const registrarPet = async () => {
@@ -147,13 +169,14 @@ export default function Perfil() {
                                     </Tr>
                                 </Thead>
                                 <Tbody overflow={"scroll"}>
+                                    {pets.map(pet => (
                                     <Tr>
-                                        <Td textAlign={"center"}>{nome}</Td>
-                                        <Td textAlign={"center"}>{raca}</Td>
-                                        <Td textAlign={"center"}>{porte}</Td>
-                                        <Td textAlign={"center"}>{sexo}</Td>
-                                        <Td textAlign={"center"}>{observacao}</Td>
-                                        <Td textAlign={"center"}>
+                                        <Td color={"#000000"} textAlign={"center"}>{pet.name}</Td>
+                                        <Td color={"#000000"} textAlign={"center"}>{pet.breed}</Td>
+                                        <Td color={"#000000"} textAlign={"center"}>{pet.type}</Td>
+                                        <Td color={"#000000"} textAlign={"center"}>{pet.sex}</Td>
+                                        <Td color={"#000000"} textAlign={"center"}>{pet.comment}</Td>
+                                        <Td color={"#000000"} textAlign={"center"}>
                                             <HStack justifyContent={"center"}>
                                                 {/* faezr uma funcao pra pegar o id de qual pet escolhido e chamar depois abrir o modal */}
                                                 <Button onClick={onOpenEdit} bg={"none"}>
@@ -169,27 +192,7 @@ export default function Perfil() {
                                             </HStack>
                                         </Td>
                                     </Tr>
-                                    <Tr>
-                                        <Td textAlign={"center"}>{nome}</Td>
-                                        <Td textAlign={"center"}>{raca}</Td>
-                                        <Td textAlign={"center"}>{porte}</Td>
-                                        <Td textAlign={"center"}>{sexo}</Td>
-                                        <Td textAlign={"center"}>{observacao}</Td>
-                                        <Td textAlign={"center"}>
-                                            <HStack justifyContent={"center"}>
-                                                <Button onClick={function () { }} bg={"none"}>
-                                                    <Icon width={"40px"} colorBg={"#ffa133"} color={"#FFFFFF"} href={""}>
-                                                        <BiSolidPencil size={28} />
-                                                    </Icon>
-                                                </Button>
-                                                <Button onClick={function () { }} bg={"none"}>
-                                                    <Icon width={"40px"} colorBg={"#D00"} color={"#FFFFFF"} href={""}>
-                                                        <FaTrash size={20} />
-                                                    </Icon>
-                                                </Button>
-                                            </HStack>
-                                        </Td>
-                                    </Tr>
+                                    ))}
                                 </Tbody>
                             </Table>
                         </TableContainer>
