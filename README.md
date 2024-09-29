@@ -33,6 +33,9 @@ Node.js 18.17 or later.
 #### Para executar
 
 ```bash
+npm install
+# para instalar dependencias e então
+
 npm run dev
 # or
 yarn dev
