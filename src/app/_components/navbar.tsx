@@ -45,13 +45,13 @@ export function Navbar() {
                     <TitleNavbar color="#F2933C" title={"Home"} size={"28px"} />
                 </Link>
                 {autenticado ? (<Link as={NextLink} href='/agenda' color="#A6AE4F">
-                    <TitleNavbar color="#F2933C" title={"Agenda"} size={"28px"} />
+                    <TitleNavbar color="#F2933C" title={"Reservar"} size={"28px"} />
                 </Link>) : ''}
                 <Link as={NextLink} href='/sobre' color="#A6AE4F">
                     <TitleNavbar color="#F2933C" title={"Sobre"} size={"28px"} />
                 </Link>
                 {autenticado ? (<Link as={NextLink} href='/hospedagensUsuario' color="#A6AE4F">
-                    <TitleNavbar color="#F2933C" title={"Reservas"} size={"28px"} />
+                    <TitleNavbar color="#F2933C" title={"Histórico"} size={"28px"} />
                 </Link>) : ''}
             </Flex>
             {autenticado ? 
@@ -87,13 +87,13 @@ export function NavbarAdmin() {
                     <TitleNavbar color="" title={"Home"} size={"28px"} />
                 </Link>
                 <Link as={NextLink} href='/agenda' color="#A6AE4F">
-                    <TitleNavbar color="" title={"Agenda"} size={"28px"} />
+                    <TitleNavbar color="" title={"Reservar"} size={"28px"} />
                 </Link>
                 <Link as={NextLink} href='/sobre' color="#A6AE4F">
                     <TitleNavbar color="" title={"Sobre"} size={"28px"} />
                 </Link>
                 <Link as={NextLink} href='/hospedagensUsuario' color="#A6AE4F">
-                    <TitleNavbar color="" title={"Reservas"} size={"28px"} />
+                    <TitleNavbar color=""  title={"Histórico"} size={"28px"} />
                 </Link>
             </Flex>
             <Link as={NextLink} href='/perfil/tutor' color="#A6AE4F">
